@@ -1,0 +1,290 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Nanum Myeongjo', serif;
+}
+html, body{
+    width: 100%;
+    margin: 0;
+}
+.header-bar{
+    width: 100%;
+    height: 260px;
+    background-color:#333333;
+    position: relative;
+}
+.haeder-img{
+    width: 100%;
+    height: 260px;
+    background-clip: border-box;
+    background-image: url(images/코딩하는고양이.jpeg);
+    background-size: 32vw 260px;
+    opacity: 0.7;
+}
+.header-title{
+    margin: 0;
+    font-size: 30px;
+    font-weight: 900;
+    color: white;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.header-title::before{
+    content: "🥊";
+    animation: blink-effect 0.5s step-end infinite;
+}
+.header-title::after{
+    content: "👀";
+    animation: blink-effect 0.5s step-end infinite;
+}
+
+@keyframes blink-effect {
+    50% {
+      opacity: 0;
+    }
+}
+
+.nav-bar{
+    width: 100%;
+    height: fit-content;
+    margin: 0;
+    background-color: black;
+    display: flex;
+    align-items: center;
+}
+.nav-bar .logo{
+    font-size: 36px;
+    color: white;
+    font-weight: 900;
+    padding-left: 10px;
+    margin-right: auto;
+    align-self: flex-end;
+    text-decoration: none;
+}
+.nav-bar .nav-menu{
+    margin: 0;
+    padding: 0 16px 0 0;
+}
+.nav-bar .nav-menu li{
+    display: inline-block;
+    list-style: none;
+    padding: 16px;
+    background-color: black;
+}
+.nav-menu li a{
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+}
+li a::after {
+    content: "";
+    display: block;
+    width: 100%; 
+    height: 5px;
+    position: absolute;
+    bottom: -14px;
+    background: blueviolet;
+    transition: all 250ms ease-out; left: 50%; width: 0;
+}
+li a:hover::after {
+    transition: all 250ms ease-out; left: 0%; width: 100%;
+}
+input[type=checkbox]{ 
+    display:none; 
+}
+input[type=checkbox]+label { 
+    display:none; 
+}
+
+@media screen and (max-width: 768px){
+    .nav-bar{
+        width: 100%;
+        height: fit-content;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+    .nav-menu{
+        width: 100%;
+        height: fit-content;
+        display: none;
+    }
+    .nav-menu li{
+        width: 100%;
+    }
+    input[type="checkbox"]+label {
+        display: block;
+        width: 40px;
+        height: 40px;
+        padding: 26px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        filter: invert(100%) sepia(0%) saturate(7448%) hue-rotate(70deg) brightness(104%) contrast(101%);
+    }
+    input+label img{
+        width: 30px;
+        height: 30px;
+    }
+    input:checked ~ .nav-menu{
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        display: inline-block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+    .nav-menu li{
+        text-align: center;
+        border-bottom: 0.1px solid rgba(255, 255, 255, .5);
+    }
+    input:checked+label{
+        background-color: bisque;
+    }
+}
+
+.main-container{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.main-title .about{
+    color: blueviolet;
+    margin: 30px;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.main-title .oz-coding{
+    font-size: 40px;
+    font-weight: 900;
+    margin: 40px;
+    padding: 10px;
+}
+.main-content{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    margin-top: 80px;
+    margin-bottom: 60px;
+}
+.menu-container{
+    position: relative;
+    width: 100%;
+    margin: 0;
+}
+
+.menu-box{
+    display: inline-flex;
+    width: 300px;
+    height: 420px;
+    margin: 20px;
+    background-color: rgba(126,58,256, 0.8);
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    flex-direction: column;
+    transition: all 0.3s linear;
+    text-decoration: none;
+}
+.menu-container:hover .menu-box{
+    transform: scale(0.9);
+}
+.menu-container:hover .menu-box::before{
+    content: "";
+    width: 300px;
+    height: 420px;
+    padding: 0;
+    border-radius: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+.menu-box img{
+    width: 200px;
+    height: 200px;
+    filter: invert(100%) sepia(0%) saturate(7448%) hue-rotate(70deg) brightness(104%) contrast(101%);
+}
+.menu-container:hover .menu-box img{
+    filter: invert(100%) sepia(0%) saturate(7448%) hue-rotate(70deg) brightness(104%) contrast(101%) blur(5px);
+}
+
+.menu-box p{
+    margin: 20px 20px 10px 20px;
+}
+.menu-box:nth-child(1) .box-title{
+    color: #99FFFF;
+    font-size: 20px;
+    font-weight: bold;
+}
+.menu-box .box-text{
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+.menu-box:nth-child(2) .box-title{
+    color: #66FF66;
+    font-size: 20px;
+    font-weight: bold;
+}
+.menu-box:nth-child(3) .box-title{
+    color: #FFCC66;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.menu-box:nth-child(1):hover{
+    transform: scale(1);
+}
+.menu-box:nth-child(1):hover::before{
+    display: none;
+}
+.menu-box:nth-child(1):hover img{
+    filter: invert(100%) sepia(0%) saturate(7448%) hue-rotate(70deg) brightness(104%) contrast(101%);
+}
+.menu-box:nth-child(2):hover{
+    transform: scale(1);
+}
+.menu-box:nth-child(2):hover::before{
+    display: none;
+}
+.menu-box:nth-child(2):hover img{
+    filter: invert(100%) sepia(0%) saturate(7448%) hue-rotate(70deg) brightness(104%) contrast(101%);
+}
+.menu-box:nth-child(3):hover{
+    transform: scale(1);
+}
+.menu-box:nth-child(3):hover::before{
+    display: none;
+}
+.menu-box:nth-child(3):hover img{
+    filter: invert(100%) sepia(0%) saturate(7448%) hue-rotate(70deg) brightness(104%) contrast(101%);
+}
+
+@media screen and (max-width: 768px){
+    .main-container .menu-box{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        width: 400px;
+        margin: 40px auto;
+        justify-content: center;
+        align-items: center;
+    }
+    
+}

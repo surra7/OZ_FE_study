@@ -1,0 +1,169 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Gaegu', sans-serif;
+    font-size: 20px;
+}
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+    margin: 0;
+    background-color: #ACE7F1;
+}
+.container{
+    height: 100%;
+    background-color: #ACE7F1;
+}
+
+/* 스크린 크기 조정 */
+.chat-screen{
+    height: calc(100% - 80px)
+}
+
+/* 유저 정보 표시되는 부분 */
+.chat-screen-bar{
+    height: 80px;
+}
+.user{
+    background-color: white;
+    padding: 16px;
+    height: 80px;
+}
+
+.user__column{
+    float: left;
+}
+
+.user__pic{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: #ACE7F1;
+}
+
+img{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.user__nick{
+    margin: 10px 0 10px 0;
+}
+
+/* 채팅창 */
+.chat-screen-content{
+    height: calc(100% - 80px);
+    overflow: auto;
+}
+.chat-screen__texts{
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+}
+.chat-screen__texts > .left{
+    background-color: #34d27b;
+    width: fit-content;
+    height: fit-content;
+    max-width: 300px;
+    word-break: break-all;
+    margin: 0 0 10px 0;
+    padding: 10px;
+    border-radius: 20px;
+    line-height: 30px;
+    position: relative;
+    left: 20px;
+}
+.chat-screen__texts > .left::after{
+    content: "";
+    border-right: 16px solid #34d27b;
+    border-bottom: 16px solid transparent; /* 겹치는 부분을 투명하게 해서 깎아서 삼각형을 만듦 */
+    position: absolute;
+    top: 10px;
+    left: -10px;
+}
+
+.chat-screen__texts > .left:hover{
+    background-color: #1c9352;
+    transition: background-color 1500ms 200ms ease-in;
+}
+.chat-screen__texts > .left:hover::after{
+    border-right: 16px solid #1c9352;
+    transition: border-right 1500ms 200ms ease-in;
+}
+
+.chat-screen__texts .right{
+    align-self: flex-end;
+}
+.chat-screen__texts > .right{
+    background-color: #34d27b;
+    width: fit-content;
+    height: fit-content;
+    max-width: 300px;
+    word-break: break-all;
+    margin: 0 0 10px 0;
+    padding: 10px;
+    border-radius: 20px;
+    line-height: 30px;
+    position: relative;
+    right: 20px;
+}
+
+.chat-screen__texts > .right::after{
+    content: "";
+    border-left: 16px solid #34d27b;
+    border-bottom: 16px solid transparent; 
+    position: absolute;
+    top: 10px;
+    right: -10px;
+}
+.chat-screen__texts > .right:hover{
+    background-color: #1c9352;
+    transition: background-color 1500ms 200ms ease-in;
+}
+.chat-screen__texts > .right:hover::after{
+    border-left: 16px solid #1c9352;
+    transition: border-left 1500ms 200ms ease-in;
+}
+
+/* 채팅 입력 창 */
+.chat-form{
+    height: 80px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.chat-form__field{
+    height: 80px;
+}
+
+.chat-form__msg{
+    float: left;
+    width: calc(100% - 120px);
+    height: 80px;
+    border: none;
+    resize: none;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.chat-form__btn{
+    float: right;
+    width: 120px;
+    height: 80px;
+    border-radius: 10px;
+    background-color: #ACE7F1;
+    font-size: 18px;
+}
+
+.chat-form__msg:focus{
+    outline: none;
+}
+
+.chat-form__btn:active{
+    background-color: #33CCF1;
+}

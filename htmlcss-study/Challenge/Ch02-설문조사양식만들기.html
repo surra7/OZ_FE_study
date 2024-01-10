@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="IE-edge">
+        <title>Challenge02</title>
+    </head>
+    <body>
+        <header>
+            <h1>설문조사 양식</h1>
+            <p>모든 항목에 빠짐없이 체크해주십시오.</p>
+        </header>
+        <hr>
+        <main>
+            <form>
+                <fieldset>
+                    <legend>개인정보</legend>
+                    <label for="name">이름</label>
+                    <input type="text" 
+                    name="name"
+                    id="name" placeholder="본명을 입력하세요">
+                    <br>
+                    <label for="email">이메일</label>
+                    <input type="email" 
+                    name="email"
+                    id="email" placeholder="메일 주소를 쓰세요">
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>설문</legend>
+                    <p>성별이 어떻게 되십니까?</p>
+                    <input type="radio" id="male" name="sex">
+                    <label for="male">남자</label>
+                    <input type="radio" id="female" name="sex">
+                    <label for="female">여자</label>
+
+                    <p>연령대가 어떻게 되십니까?</p>
+                    <input type="radio" id="teen" name="age">
+                    <label for="teen">10대</label>
+                    <input type="radio" id="twenty" name="age">
+                    <label for="twenty">20대</label>
+                    <input type="radio" id="thirty" name="age">
+                    <label for="thirty">30대</label>
+                    <input type="radio" id="fourty" name="age">
+                    <label for="fourth">40대</label>
+                    <input type="radio" id="fifty" name="age">
+                    <label for="fifty">50대</label>
+                    <input type="radio" id="other" name="age">
+                    <label for="other">그 외</label>
+
+                    <p>강의 만족도가 어떻게 되십니까?</p>
+                    <input type="radio" id="verygood" name="satisfaction">
+                    <label for="verygood">아주 좋음</label>
+                    <input type="radio" id="good" name="satisfaction">
+                    <label for="good">좋음</label>
+                    <input type="radio" id="soso" name="satisfaction">
+                    <label for="soso">보통</label>
+                    <input type="radio" id="bad" name="satisfaction">
+                    <label for="bad">나쁨</label>
+                    <input type="radio" id="verybad" name="satisfaction">
+                    <label for="verybad">아주 나쁨</label>
+
+                    <p>어떤 점이 좋았나요?</p>
+                    <input type="checkbox" id="quality" name="goodThing">
+                    <label for="quality">강의 질</label>
+                    <input type="checkbox" id="content" name="goodThing">
+                    <label for="content">강의 내용</label>
+                    <input type="checkbox" id="amount" name="goodThing">
+                    <label for="amount">강의 양</label>
+                    <input type="checkbox" id="teacher" name="goodThing">
+                    <label for="teacher">강사</label>
+                    <input type="checkbox" id="time" name="goodThing">
+                    <label for="time">학습 시간</label>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>기타 의견</legend>
+                    <textarea rows="3" cols="30" name="comment" placeholder="개선했으면 좋을 것 같은 점"></textarea>
+                </fieldset>
+                <br>
+                <input type="submit">
+            </form>
+        </main>
+        <hr>
+        <footer>
+            <p>입력하느라 수고하셨습니다.</p>
+        </footer>
+    </body>
+</html>

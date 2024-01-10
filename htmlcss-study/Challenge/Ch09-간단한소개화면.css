@@ -1,0 +1,105 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Amaranth', sans-serif;
+}
+
+html{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    margin: 0;
+    background-color: #ACE7F1;
+}
+
+.container{
+    height: 100%;
+    background-color: #ACE7F1;
+}
+
+.intro-box{
+    margin: 10px;
+    min-height: 320px;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.intro__sidebar{
+    display: inline-block;
+    width: 30%;
+    min-height: 100%;
+    border-radius: 20px 0 0 20px;
+    background-color: orange;
+    text-align: center;
+    padding: 10px;
+}
+
+.fun__sub, .intro__sub{
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.fun__icon{
+    width: 30px;
+}
+
+.fun__title{
+    font-size: 26px;
+}
+
+.icon{
+    width: 30px;
+    display: inline-block;
+    filter: invert(26%) sepia(63%) saturate(2439%) hue-rotate(100deg) brightness(95%) contrast(105%);
+}
+
+.fun__thing{
+    vertical-align: top;
+    margin: 5px;
+    margin-left: 10px;
+    color: green;
+    overflow: hidden;
+}
+
+.selecte__icon1{
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro__main{
+    display: inline-block;
+    width: 70%;
+    height: 100%;
+    padding-left: 20px;
+    overflow: hidden;
+}
+
+.intro__title{
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.intro__sub{
+    margin-bottom: 30px;
+}
+
+.intro__thing{
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+    margin-left: 10px;
+    color: green;
+}
+
+.selecte__icon2{
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}

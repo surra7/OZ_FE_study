@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge14</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        html, body{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+        .container{
+            width: 100;
+            height: 100%;
+            background-color: skyblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container p{
+            margin: auto;
+            color: white;
+            font-weight: 700;
+        }
+
+        @media screen and (max-width: 1250px){
+            .container{
+                background-color: brown;
+            }
+            .container p::after{
+                content: "일반 PC";
+                display: block;
+                font-weight: 400;
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        @media screen and (max-width: 1024px){
+            .container{
+                background-color: purple;
+            }
+            .container p::after{
+                content: "아이패드 Pro";
+                display: block;
+                font-weight: 400;
+                display: flex;
+                justify-content: center;
+            }
+        }
+        @media screen and (max-width: 760px){
+            .container{
+                background-color: green;
+            }
+            .container p::after{
+                content: "아이패드 Mini";
+                display: block;
+                font-weight: 400;
+                display: flex;
+                justify-content: center;
+            }
+        }
+        @media screen and (max-width: 640px){
+            .container{
+                background-color: blue;
+            }
+            .container p::after{
+                content: "모바일";
+                display: block;
+                font-weight: 400;
+                display: flex;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <p>여러 화면크기로 구경해봐요!</p>
+        </div>
+    </div>
+</body>
+</html>
+
+

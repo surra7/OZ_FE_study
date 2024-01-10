@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge13</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        html, body{
+            width: 100%;
+            margin: 0;
+        }
+        .nav-bar{
+            width: 100%;
+            margin: 0;
+            background-color: #333333;
+            display: flex;
+            align-items: center;
+        }
+        .nav-bar .nav-menu{
+            margin: 0;
+            padding: 0;
+        }
+        .nav-bar .nav-menu li{
+            display: inline-block;
+            list-style: none;
+            color: white;
+            text-decoration: none;
+            padding: 16px;
+            text-align: center;
+            padding: 20px;
+            background-color: #333333;
+        }
+        input[type=checkbox]{ 
+            display:none; 
+        }
+        input[type=checkbox]+label { 
+            display:none; 
+        }
+
+        .nav-menu li:nth-child(1){
+            background-color: green;
+            padding: 20px;
+        }
+
+        @media screen and (max-width: 550px){
+            .nav-bar{
+                width: 100%;
+                height: fit-content;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: white;
+            }
+            .nav-menu{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .nav-menu li{
+                width: 100%;
+            }
+            input[type="checkbox"]+label {
+                display: block;
+                width: 40px;
+                height: 40px;
+                margin: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+            }
+            input+label img{
+                width: 30px;
+                height: 30px;
+            }
+            input:checked ~ .nav-menu{
+                display: none;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="nav-bar">
+        <input type="checkbox" checked class="nav-ham" id="nav-ham"/>
+        <label for="nav-ham">
+            <img src="images/hamburger-icon.png">
+        </label>
+        <ul class="nav-menu">
+            <li>홈</li>
+            <li>소개</li>
+            <li>서비스</li>
+            <li>문의</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+

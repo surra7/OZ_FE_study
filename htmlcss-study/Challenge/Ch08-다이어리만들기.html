@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE-edge">
+    <title>Challenge08</title>
+    <link href="Ch08-다이어리만들기.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="form">
+        <h1 class="title">🍀오늘의 일기🍀</h1>
+        <table class="table">
+            <tr>
+                <td id="date">
+                    <input type="date" name="bday" required pattern="\d{4}-\d{2}-\d{2}" value="2023-12-26"/>
+                    <span class="validity"></span>
+                </td>
+                <td id="weather">
+                    <input type="radio" id="sunny" name="weather" checked>
+                    <label class="icon" for="sunny">☀️</label>
+                    <input type="radio" id="cloudy" name="weather">
+                    <label class="icon" for="cloudy">⛅️</label>
+                    <input type="radio" id="rain" name="weather">
+                    <label class="icon" for="rain">🌧️</label>
+                    <input type="radio" id="snow" name="weather">
+                    <label class="icon" for="snow">🌨️</label>
+                </td>
+            </tr>
+            <tr>
+                <td id="emotion" colspan="2">
+                    <label for="emotion">오늘의 기분</label>
+                    <span class="icon">😡</span>
+                    <input type="range" min="1" max="100" id="emotion">
+                    <span class="icon">😆</span>
+                </td>
+            </tr>
+            <tr>
+                <td id="title" colspan="2">
+                <input value="친구들과의 크리스마스 파티~🎄" maxlength="22" id="textarea1">
+                </td>
+            </tr>
+            <tr>
+                <td id="img" colspan="2">
+                    <img src="images/파티사진.jpg" alt="딸기산타 사진">
+                </td>
+            </tr>
+            <tr>
+                <td id="content" colspan="2">
+                    <textarea maxlength="225" id="textarea2">친구네 집에서 크리스마스 파티를 했다. 
+떡볶이, 스테이크, 파스타, 와인을 먹고 재밌게 놀았다. 그리고 달무티라는 게임도 했는데 재미있었다.
+딸기 산타라는 것도 만들어 봤는데 원래 생크림으로 해야되는데 친구 집에 있던 그릭 요거트로 해봤다.
+요거트가 잘 안뭉쳐서 만드는데 힘들었다. 모양은 좀 이상하지만 초코펜으로 장식도 했다. 다 만들고 나니까 나름 귀여운것 같기도?ㅎ
+친구들과 함께 보내는 즐거운 크리스마스였다! ><
+                    </textarea>
+                </td>
+            </tr>
+
+    </div>
+    </table>
+
+    <input type="submit" id="submit" name="submit" value="저장하기">
+    </div>
+    </div>
+</body>
+
+</html>

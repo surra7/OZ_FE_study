@@ -1,0 +1,152 @@
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+    margin: 0;
+    background-color: skyblue;
+}
+
+main{
+    height: calc(100% - 120px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+footer{
+    height: 120px;
+    background-color: white;
+}
+
+.hat{
+    width: 58px;
+    height: 56px;
+    background-color: black;
+    color: white;
+}
+.hat-bottom{
+    width: 90px;
+    height: 12px;
+    background-color: black;
+    color: white;
+}
+.face, .body, .bottom{
+    width: 80px;
+    height: 80px;
+    color: black;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.face{
+    display: inline-block;
+    position: relative;
+
+}
+
+.left-eye, .right-eye{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: black;
+    position: relative;
+}
+
+.left-eye{
+    left: 18px;
+    top: 15px;
+}
+
+.right-eye{
+    left: 35px;
+    top: 15px;
+    background-color: red;
+}
+
+.nose{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-left: 30px solid transparent;
+    border-right: 30px solid #FF9933;
+    position: relative;
+    right: 22px;
+    top: 15px;
+}
+
+.mouth{
+    display: inline-block;
+    width: 20px;
+    height: 10px;
+    color: blue;
+    border-radius: 0 0 10px 10px;
+    background-color: black;
+    position: relative;
+    left: 30px;
+    top: 10px;
+    z-index: 100;
+}
+
+.body-arm{
+    height: 100px;
+}
+.body{
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    z-index: 3;
+}
+
+.button{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: black;
+    position: relative;
+}
+
+.button:nth-of-type(1){
+    left: 40px;
+    top: 25px;
+}
+.button:nth-of-type(2){
+    left: 40px;
+    top: 35px;
+}
+.button:nth-of-type(3){
+    left: 40px;
+    top: 45px;
+}
+
+.left-arm, .right-arm{
+    width: 80px;
+    height: 5px;
+    background-color: brown;
+    color: white;
+    display: inline-block;
+}
+.left-arm{
+    position: relative;
+    left: 40px;
+    bottom: 40px;
+    transform: rotate(35deg);
+    z-index: 1;
+}
+.right-arm{
+    position: relative;
+    right: 40px;
+    bottom: 40px;
+    transform: rotate(325deg);
+    z-index: 2;
+}
+
+.bottom{
+    width: 130px;
+    height: 130px;
+}

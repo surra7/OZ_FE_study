@@ -1,0 +1,70 @@
+*{
+    text-align: center;
+    box-sizing: border-box;
+}
+
+html{
+    background-color: #ACE7F1;
+    font-size: 16px;
+    background-image: url(images/cloud.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+body{
+    width: 640px;
+    margin: auto; /*너비에서 남는 여백을 동일하게 분배*/
+}
+
+.top{
+    font-family: 'Gaegu', sans-serif, monospace;
+}
+
+h1{
+    font-size: 48px;
+}
+
+img{
+    width: 200px;
+    height: 190px;
+    border-radius: 100px;
+}
+
+div.top{
+    font-size: 1.4rem;
+}
+
+.div-content{
+    margin: 16px;
+    display:inline-block;
+}
+
+#fun-title{
+    font-size: 28px;
+}
+
+#fun-content{
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #FFFFFFAA;
+    border-radius: 20px;
+}
+
+#hachiware{
+    width: 50%;
+    min-height: 160px;
+    margin: 0 auto;
+    float: left;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+
+#usagi{
+    width: 50%;
+    min-height: 160px;
+    margin: 0 auto;
+    float: right;
+    padding: 0 12px;
+    box-sizing: border-box;
+}

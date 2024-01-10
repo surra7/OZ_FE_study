@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>Challenge04</title>
+    </head>
+    <body>
+        <h1>회원가입</h1>
+        <form action="none.com" method="post">
+        <fieldset>
+            <legend>필수 입력 사항</legend>
+            <ul>
+                <li>
+                    <label for="name">이름: </label>
+                    <input type="text" id="name" name="name">
+                </li>
+                <li>
+                    <label for="id">아이디: </label>
+                    <input type="text" placeholder="6자 이상 20자 미만 공백 없이" id="id" name="id">
+                </li>
+                <li>
+                    <label for="pw">비밀번호: </label>
+                    <input type="password" placeholder="대소문자로 입력해주세요" id="pw" name="pw">
+                </li>
+                <li>
+                    <label for="email">이메일: </label>
+                    <input type="email" id="email" name="email">
+                </li>
+                <li>
+                    <label for="phone">휴대폰: </label>
+                    <input type="tel" id="phone" maxlength="3" style="width: 30px" name="tel1">
+                    <span>-</span>
+                    <input type="tel" id="phone" maxlength="4" style="width: 30px" name="tel2">
+                    <span>-</span>
+                    <input type="tel" id="phone" maxlength="4" style="width: 30px" name="tel3">
+                    <button>인증번호 전송</button>
+                    <span>&nbsp;</span>
+                    <input type="tel" maxlength="6" style="width: 60px;" name="certifi">
+                    <button>인증확인</button>
+                </li>
+
+            </ul>
+        </fieldset>
+        <hr>
+        <fieldset>
+            <legend>선택 입력 사항</legend>
+            <ul>
+                <li>
+                    <label for="place">지역: </label>
+                    <select>
+                        <option value="none" selected disabled>지역을 선택해주세요</option> 
+                        <option value="seoul">서울</option>
+                        <option value="busan">부산</option>
+                        <option value="incheon">인천</option>
+                        <option value="gyeonggi">경기</option>
+                        <option value="daegu">대구</option>
+                        <option value="deajeon">대전</option>
+                        <option value="gwangju">광주</option>
+                        <option value="ulsan">울산</option>
+                        <option value="gangwon">강원</option>
+                        <option value="sejong">세종</option>
+                        <option value="jeju">제주도</option>
+                    </select>
+                </li>
+                <li>
+                    <p>성별이 어떻게 되십니까?</p>
+                    <input type="radio" id="male" name="sex">
+                    <label for="male">남자</label>
+                    <input type="radio" id="female" name="sex">
+                    <label for="female">여자</label>
+                    <input type="radio" id="none" name="sex">
+                    <label for="none">비밀</label>
+                </li>
+                <li>
+                    <p>취미가 무엇인가요?</p>
+                    <input type="checkbox" id="coding" name="hobby">
+                    <label for="coding">코딩</label>
+                    <input type="checkbox" id="exercise" name="hobby">
+                    <label for="exercise">운동</label>
+                    <input type="checkbox" id="breath" name="hobby">
+                    <label for="breath">숨쉬기</label>
+                    <input type="checkbox" id="trip" name="hobby">
+                    <label for="trip">여행</label>
+                    <input type="checkbox" id="sleep" name="hobby">
+                    <label for="sleep">잠자기</label>
+                </li>
+            </ul>
+        </fieldset>
+        <hr>
+        <input type="submit" value="가입하기">
+        <input type="submit" value="취소하기">
+        </form>
+    </body>
+</html>
