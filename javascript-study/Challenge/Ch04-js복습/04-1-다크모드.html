@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge04-1</title>
+    <style>
+        .dark-mode {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Ch04-1. 다크모드 변경하기</h1>
+    <button onclick="darkMode()" id="button">Dark Mode</button>
+    
+    <script>
+        function darkMode(){
+            var body = document.body;
+            body.classList.toggle("dark-mode")
+
+            var botton = document.getElementById("button")
+            if(button.innerHTML == "Dark Mode"){
+                button.innerHTML = "Light Mode"
+            } else {
+                button.innerHTML = "Dark Mode"
+            }
+        }
+
+    </script>
+</body>
+</html>

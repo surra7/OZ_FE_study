@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge04-2</title>
+    <link href="04-2-캐러셀만들기.css" rel="stylesheet">
+</head>
+<body>
+    <div style="overflow: hidden;">
+        <div class="container">
+            <div class="inner">
+                <img src="https://mblogthumb-phinf.pstatic.net/MjAyMDA5MTBfMjE4/MDAxNTk5NzMyNDg0NDU3.tuXEDqBbIWaQXmQBu2BvkfLLlM_q6A8vgIrVSBsJv20g.DQyFCBAJ3XPQJ_bQVrjpCQzFx-ihGWjhkPcLuIlhKd4g.JPEG.rkdxorn13/1599732483439.jpg?type=w800">
+            </div>
+            <div class="inner">
+                <img src="https://mblogthumb-phinf.pstatic.net/MjAyMDA5MTBfMTYw/MDAxNTk5NzMyNDg1MjM5.f07FK9-ScNsYK2Nzd8j2zBtQvLtQOVk41Kp-XAa5M5wg.6PAUJrdFSOtVjw7QEjiemmXtk1rW0UZFe2gsPWHKqaog.JPEG.rkdxorn13/1599732484284.jpg?type=w800">
+            </div>
+            <div class="inner">
+                <img src="https://mblogthumb-phinf.pstatic.net/MjAyMDA5MTBfMjY4/MDAxNTk5NzMyNjYwMDQw.6b8YYi0jIy6TjJuS6B_3nQd83e1GlIQEM0TNdg12B9Ag.ezKkufHjbGpu9f0eOEh1jVVEkgwU0D6uImx7TvYyluQg.JPEG.rkdxorn13/1599732659078.jpg?type=w800">
+            </div>
+        </div>
+    </div>
+
+    <button class="prev">prev</button>
+    <button class="btn">1</button>
+    <button class="btn">2</button>
+    <button class="btn">3</button>
+    <button class="next">next</button>
+
+    <script>
+        let index = 0;
+
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        const Button = document.querySelectorAll('.btn');
+        const container = document.querySelector('.container');
+
+        prevButton.addEventListener('click', () => {
+            if(index === 0) return;
+            index -= 1;
+
+            container.style.transform = `translate(${-100 * index}vw)`
+        })
+
+        nextButton.addEventListener('click', () => {
+            if(index === 2) return;
+            index += 1;
+
+            container.style.transform = `translate(${-100 * index}vw)`
+        })
+
+        Button.forEach((el, idx) => {
+            el.onclick = () => {
+                index = idx;
+                container.style.transform = `translate(${-100 * idx}vw)`;
+            }
+        });
+
+    </script>
+</body>
+</html>
