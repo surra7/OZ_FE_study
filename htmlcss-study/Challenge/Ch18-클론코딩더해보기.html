@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge18</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 16px;
+        }
+        body{
+            margin: 0;
+        }
+        .header-content, .cont-main{
+            margin: 0 auto;
+            max-width: 952px;
+        }
+        .flex{
+            display: flex;
+        }
+        .main{
+            padding: 84px 0 5rem;
+        }
+    </style>
+    <link href="Ch18-header.css" rel="stylesheet">
+    <link href="Ch18-banner-area.css" rel="stylesheet">
+    <link href="Ch18-area.css" rel="stylesheet">
+    <link href="Ch18-footer.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content flex">
+                <div class="header-content__logo">kakao</div>
+                <nav class="header-content__nav flex">
+                    <ul>
+                        <li>소개</li>
+                        <li>이야기</li>
+                        <li>기술과 서비스</li>
+                        <li>약속과 책임</li>
+                        <li>뉴스</li>
+                    </ul>
+                </nav>
+                <div class="header-content__input flex">
+                    <span>
+                        <img src="images/search-icon.png">
+                    </span>
+                    <span>
+                        <img src="images/language-icon.png">
+                    </span>
+                    <span>
+                        <img src="images/dark-mode-icon.png">
+                    </span>
+                </div>
+            </div>
+        </header>
+
+        <main class="main">
+            <section class="cont-main banner-area flex">
+                <div class="area-visual">
+                    <div class="wrap-slide"></div>
+                    <div class="inner-top">
+                        <img src="https://t1.kakaocdn.net/kakaocorp/kakaocorp/admin/report/c925e9e0018c00001.gif">
+                    </div>
+                    <div class="inner-text">카톡으로 돌아보는 <br> 2023</div>
+                    <div class="inner-bottom flex">Year in Talk
+                        <img src="images/next-icon.png">
+                    </div>
+                </div>
+                <div class="area-side flex">
+                    <div class="inner-widget first">
+                        <span>기부에 함께 해주신 <br> 착한 마음들</span>
+                        <span><span class="count">57,236,794</span>건</span>
+                    </div>
+                    <div class="inner-widget second"></div>
+                    <div class="inner-widget third"></div>
+                </div>
+            </section>
+
+            <section class="cont-main area_story">
+                <h3 class="title-cont">카카오와 공동체가 축적해 온 이야기들</h3>
+                <div class="list-story flex">
+                    <div class="list-item"></div>
+                    <div class="list-item"></div>
+                    <div class="list-item"></div>
+                    <div class="list-item"></div>
+                    <div class="list-item"></div>
+                    <div class="list-item"></div>
+                </div>
+            </section>
+
+            <section class="cont-main area_service">
+                <h3 class="title-cont">더 나은 세상을 만드는 카카오 서비스</h3>
+                <div class="list-service flex">
+                    <div class="service-item flex"><strong>커뮤니케이션</strong></div>
+                    <div class="service-item flex"><strong>비즈니스</strong></div>
+                    <div class="service-item flex"><strong>일상편의</strong></div>
+                    <div class="service-item flex"><strong>쇼핑</strong></div>
+                    <div class="service-item flex"><strong>엔터테인먼트</strong></div>
+                    <div class="service-item flex"><strong>소셜임팩트</strong></div>
+                </div>
+                <div class="wrap-btn">
+                    <div class="bottom-btn">서비스 전체보기
+                        <img src="images/next-icon.png">
+                    </div>
+                </div>
+            </section>
+
+            <section class="cont-main area_news">
+                <h3 class="title-cont">오늘의 뉴스</h3>
+                <div class="list-news flex">
+                    <div class="news-top flex">
+                        <div class="list-item"></div>
+                        <div class="list-item second"></div>
+                        <div class="list-item third"></div>
+                    </div>
+                    <div class="news-bottom flex">
+                        <div class="bottom-slide flex">
+                            <div class="service-item">카카오같이가치,'2024 새해 다짐 챌린지'오픈</div>
+                            <div class="service-item">'카카오 공동체 기술윤리 위원회', 2023 기술윤리 보고서 발간</div>
+                        </div>
+                        <div class="bottom-link flex">
+                            <div class="service-item flex">전체 뉴스
+                                <img src="images/next-icon.png">
+                            </div>
+                            <div class="service-item flex">보도 자료
+                                <img src="images/next-icon.png">
+                            </div>
+                            <div class="service-item flex third">참고자료
+                                <img src="images/next-icon.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cont-main area_resposible">
+                
+            </section>
+
+            <section class="cont-main area_help">
+                
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__container">
+                <section class="footer__menu">
+                    <h3 class="footer__nav__title">오늘의 카카오</h3>
+                    <nav class="footer__nav flex">
+                        <ul class="today">
+                            <li>#카톡조용히나가기</li>
+                            <li>#코로나백신접종증명서</li>
+                            <li>#카카오톡등본</li>
+                            <li>#추모프로필</li>
+                            <li>#인증서발급</li>
+                            <li>#연말정산</li>
+                            <li>#개발자도구</li>
+                        </ul>
+                        <ul>
+                            <li class="title">공동체 기업의 서비스</li>
+                            <li>커뮤니케이션</li>
+                            <li>일상편의</li>
+                            <li>비즈니스</li>
+                            <li>쇼핑</li>
+                            <li>엔터네인먼트</li>
+                            <li>임팩트</li>
+                        </ul>
+                        <ul>
+                            <li class="title">카카오 공동체</li>
+                            <li>카카오</li>
+                            <li>카카오페이</li>
+                            <li>카카오뱅크</li>
+                            <li>카카오모빌리티</li>
+                            <li>카카오스타일</li>
+                            <li>카카오엔터테인먼트</li>
+                            <li>카카오게임즈</li>
+                        </ul>
+                        <ul>
+                            <li class="top">카카오픽코마</li>
+                            <li>카카오브레인</li>
+                            <li>카카오엔터프라이즈</li>
+                            <li>카카오헬스케어</li>
+                            <li>카카오벤처스</li>
+                            <li>카카오인베스트먼트</li>
+                            <li>링키지랩</li>
+                        </ul>
+                    </nav>
+                </section>
+                <section class="footer__info">
+                    <p>
+                        이용약관 &nbsp;&nbsp;&nbsp;
+                        <strong style="color: #333333;">위치정보 이용약관</strong> &nbsp;&nbsp;&nbsp;
+                        <strong style="color: #333333;">개인정보처리방침</strong> &nbsp;&nbsp;&nbsp;
+                        운영정책 &nbsp;&nbsp;&nbsp;
+                        청소년보호정책 &nbsp;&nbsp;&nbsp;
+                    </p>
+                    <p>
+                        브랜드보호정책 &nbsp;&nbsp;&nbsp;
+                        권리침해신고안내 &nbsp;&nbsp;&nbsp;
+                        공지사항 &nbsp;&nbsp;&nbsp;
+                        사이버윤리실 &nbsp;&nbsp;&nbsp;
+                        Contact Us &nbsp;&nbsp;&nbsp;
+                    </p>
+                    <p class="copy">
+                        © Kakao Corp.  All rights reserved.
+                    </p>
+                </section>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

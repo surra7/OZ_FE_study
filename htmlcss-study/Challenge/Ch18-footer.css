@@ -1,0 +1,75 @@
+.footer{
+    border-top: 1px solid #333333;
+    padding: 0 1rem;
+}
+.footer__container{
+    max-width: 60rem;
+    margin: auto;
+}
+.footer__menu{
+    padding: 3rem 0;
+    font-size: 1.4rem;
+}
+.footer__nav .footer__nav__title{
+    display: block;
+    line-height: 1.5;
+    font-weight: 400;
+    color: black;
+}
+
+.footer__nav{
+    margin-top: 25px;
+    color: #515255;
+}
+.footer__nav .today{
+    color: black;
+}
+
+.footer__nav ul{
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    width: 33%;
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+    font-size: 0.875rem;
+}
+.footer__nav ul:nth-child(2){
+    margin-left: 30px;
+}
+.footer__nav ul li{
+    margin-bottom: 1rem;
+}
+.footer__nav .title{
+    font-weight: 600;
+    color: black;
+    font-size: 15px;
+    line-height: 1.42;
+    letter-spacing: -.5px;
+}
+.footer__nav .top{
+    padding-top: 37px;
+}
+
+.footer__info{
+    padding: 1.6rem 0 2.25rem;
+    color: #868B94;
+    line-height: 1.5;
+    font-size: 0.875rem;
+}
+.footer__info .copy{
+    padding-top: 12px;
+    font-size: .925rem;
+}
+
+@media screen and (max-width: 768px){
+    .footer__apps{
+        float: none;
+        display: flex;
+        margin-bottom: 1.25rem;
+    }
+    .footer__appbtn{
+        display: none;
+    }
+}

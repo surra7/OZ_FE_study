@@ -1,0 +1,203 @@
+.area_story{
+    margin-top: 80px;
+    max-width: 100%;
+    height: 440px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.title-cont{
+    font-size: 32px;
+    line-height: 48px;
+    font-weight: 500;
+    margin: auto;
+    max-width: 952px;
+}
+
+.area_story .title-cont::before{
+    content: '';
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    vertical-align: top;
+    background-image: url('https://www.kakaocorp.com/page/ico_archives.gif');
+    background-size: 100%;
+    margin: 0 4px 0 10px;
+}
+.list-story{
+    flex: 0 0 auto;
+    margin: 20px 0;
+    animation: marquee 60s linear infinite;
+    overflow: hidden;
+    height: 400px;
+    position: absolute; white-space: nowrap;
+}
+.list-item{
+    width: 316px;
+    height: 365px;
+    background-color: #eee;
+    margin-right: 10px;
+    border-radius: 20px;
+}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.area_service{
+    margin-top: 80px;
+}
+.area_service .title-cont::before{
+    content: '';
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    vertical-align: top;
+    background-image: url('https://www.kakaocorp.com/page/ico_tit_service.gif');
+    background-size: 100%;
+    margin: 0 4px 0 10px;
+}
+.list-service{
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.service-item{
+    width: 468px;
+    height: 110px;
+    background-color: #eee;
+    flex: 1 1 40%;
+    margin: 12px 12px 0;
+    padding: 32px;
+    border-radius: 24px;
+    font-size: 18px;
+    align-items: center;
+}
+
+.wrap-btn{
+    margin-top: 40px;
+    height: 60px;
+    text-align: center;
+}
+.bottom-btn{
+    width: 280px;
+    height: 60px;
+    line-height: 60px;
+    background-color: #eee;
+    border-radius: 30px;
+    font-size: 15px;
+    display: inline-block;
+}
+.bottom-btn img{
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin: 0 0 5px 5px;
+}
+
+.area_news{
+    margin-top: 80px;
+}
+.area_news .title-cont::before{
+    content: '';
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    vertical-align: top;
+    background-image: url('https://www.kakaocorp.com/page/calendar/light/ico_date11.gif');
+    background-size: 100%;
+    margin: 0 4px 0 10px;
+}
+.list-news{
+    flex-direction: column;
+    margin-top: 20px;
+    width: 100%;
+}
+.news-top .list-item{
+    margin: 0 6px;
+    height: 424px;
+}
+.news-bottom{
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 24px;
+}
+.news-bottom .bottom-slide .service-item{
+    width: 464px;
+    height: 140px;
+    flex: 0 0 auto;
+    margin: 0 6px;
+    font-weight: 200px;
+}
+.news-bottom .bottom-link .service-item{
+    width: 306px;
+    height: 74px;
+    margin: 12px 6px;
+    padding: 24px;
+    justify-content: space-between;
+    align-items: center;
+}
+.service-item img{
+    width: 24px;
+    height: 24px;
+}
+
+@media screen and (max-width: 1024px){
+    .area_story{
+        max-width: 100%;
+        overflow: hidden;
+        width: 100%;
+        margin: 80px auto 0;
+    }
+    .area_story .title-cont{
+        max-width: 712px;
+    }
+    .list-story{
+        flex: 0 0 auto;
+        margin: 20px 0;
+        animation: marquee 60s linear infinite;
+        overflow: hidden;
+        white-space: nowrap; 
+        height: 365px;
+    }
+    .list-item{
+        width: 232px;
+        height: 328px;
+        background-color: #eee;
+        margin-right: 10px;
+        border-radius: 20px;
+    }
+    
+    .list-news{
+        margin-top: 20px;
+        width: 100%;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    .news-top .list-item{
+        width: 330px;
+    }
+    .news-top{
+        display: inline-block;
+    }
+    .news-bottom{
+        display: inline-block;
+        width: 330px;
+        margin: 0;
+    }
+    .bottom-slide{
+        display: inline-block;
+    }
+    .news-bottom .bottom-slide .service-item{
+        width: 330px;
+        margin-bottom: 20px;
+    }
+    .news-bottom .bottom-link .service-item{
+        width: 330px;
+    }
+    .list-news .second, .list-news .third{
+        display: none;
+    }
+}
