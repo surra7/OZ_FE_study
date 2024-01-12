@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge07-4</title>
+    <style>
+        body{
+            width: 100%;
+            height: 100%;
+            background-color: #333333;
+            color: white;
+            text-align: center;
+        }
+        input{
+            width: 180px;
+            height: 30px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #check{
+            width: 120px;
+            height: 36px;
+            border: 2px solid #FF6600;
+            color: #FF6600;
+            border-radius: 5px;
+            font-size: 20px;
+            margin-left: 10px;
+            background-color: #333;
+            cursor: pointer;
+        }
+        #again{
+            width: 200px;
+            height: 40px;
+            border: 3px solid skyblue;
+            background-color: #333;
+            font-size: 20px;
+            color: skyblue;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mystery Number 맞추기</h1>
+
+    <p>1부터 100사이의 숫자를 입력하세요!</p>
+    <input type="text"/>
+    <button id="check" onclick="getNum()">뚜둥!</button>
+    <p id="hint"></p>
+    <button id="again" onclick="again()">다시하기</button>
+
+    <script>
+
+        let ranNum = Math.floor(Math.random() * 100) + 1;
+        const p = document.getElementById('hint');
+        const againBtn = document.getElementById('again');
+
+        console.log(ranNum);
+
+        function getNum(){
+            let inputNum = document.querySelector('input').value;
+
+            if (inputNum == ranNum){
+                alert("정답입니다!");
+                againBtn.style.display = "block";
+                p.style.display = "none";
+                document.querySelector('input').value = null;
+            } else if (inputNum < ranNum){
+                p.textContent = "힌트: 숫자가 너무 작아요! 조금 더 높여보세요!";        
+            } else{
+                p.textContent = "힌트: 숫자가 너무 커요! 줄여볼까요?";        
+            }
+        }
+
+        function again(){
+            againBtn.style.display = "none";
+            ranNum = Math.floor(Math.random() * 100) + 1;
+            console.log(ranNum);
+            p.textContent = "";
+            p.style.display = "block";
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge07-1</title>
+</head>
+<body>
+    <p></p>
+
+    <script>
+        const p = document.querySelector('p');
+
+        const score = parseInt(prompt("중간고사 점수를 입력하세요."));
+        let lank;
+
+        if (score >= 90){
+            lank = 'A';
+        } else if (score >= 80){
+            lank = 'B';
+        } else if (score >= 70){
+            lank = 'C';
+        } else if (score >= 60){
+            lank = 'D'
+        } else{
+            lank = 'F'
+        }
+        const result = document.createElement('p');
+
+        result.textContent = `나의 중간고사 점수는 ${score}점, 학점은 ${lank}!!!`
+        p.appendChild(result);
+    </script>
+    
+</body>
+</html>

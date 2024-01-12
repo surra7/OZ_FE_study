@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge07-2</title>
+</head>
+<body>
+    <h1>별 트리 찍기</h1>
+    <p id="first">1번 별</p>
+    <p id="second">2번 별</p>
+    <p id="third">3번 별</p>
+
+    <script>
+
+        const p1 = document.getElementById('first');
+        const p2 = document.getElementById('second');
+        const p3 = document.getElementById('third');
+
+        for (let i = 0; i <= 5; i++){
+            for (let j = 0; j < i; j++){
+                p1.innerText += "*";
+            }
+            p1.innerText += '\n';
+        }
+
+        for (let i = 0; i < 5; i++){
+            for (let j = 0; j < i; j++){
+                p2.innerText += "*";
+            }
+            p2.innerText += '\n';
+        }
+        for (let i = 5; i >= 0; i--){
+            for (let j = 0; j <= i; j++){
+                p2.innerText += "*";
+            }
+            p2.innerText += '\n';
+        }
+
+        for (let i = 0; i < 5; i++){
+            for (let j = 5; j > i; j--){
+                p3.innerText += "\u00a0";
+            }
+            for (let j = 0; j < i; j++){
+                p3.innerText += "*";
+            }
+            for (let j = 1; j < i; j++){
+                p3.innerText += "*";
+            }
+            p3.innerText += '\n';
+        }
+        for (let i = 0; i < 5; i++){
+            for (let j = 0; j < i; j++){
+                p3.innerText += "\u00a0";
+            }
+            for (let j = 5; j > i; j--){
+                p3.innerText += "*";
+            }
+            for (let j = 4; j > i; j--){
+                p3.innerText += "*";
+            }
+            p3.innerText += '\n';
+        }
+        
+        
+    </script>
+</body>
+</html>
