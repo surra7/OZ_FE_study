@@ -55,9 +55,9 @@
                 </select>
 
 
-                <input type="radio" id="male" name="sex" value="남자">
+                <input type="radio" id="male" name="gender" value="남자">
                 <label for="male">남자</label>
-                <input type="radio" id="female" name="sex" value="여자">
+                <input type="radio" id="female" name="gender" value="여자">
                 <label for="female">여자</label>
                 <br>
 
@@ -75,7 +75,7 @@
             var slselector = document.getElementById('place');
             console.log(slselector.options[slselector.selectedIndex].value);
 
-            var slradio = document.getElementsByName('sex');
+            var slradio = document.getElementsByName('gender');
             for (var i = 0; i < slradio.length; i++){
                 if (slradio[i].checked)
                     console.log(slradio[i].value)

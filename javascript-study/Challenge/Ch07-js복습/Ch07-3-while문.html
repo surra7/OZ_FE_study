@@ -10,15 +10,28 @@
 
     <script>
 
-        let count = 0;
+        // let count = 0;
 
-        for (let i = 100; i <= 500; i += 4){
-            if (count == 5){
+        // for (let i = 100; i <= 500; i += 4){
+        //     if (count == 5){
+        //         document.write("<br>")
+        //         count = 0;
+        //     }
+        //     document.write(i + "&nbsp");
+        //     count++;
+        // }
+
+        let count = 100;
+        let i = 0;
+        
+        while(count <= 500){
+            document.write(count + "&nbsp")
+            count += 4;
+            i ++;
+            if (i == 5){
                 document.write("<br>")
-                count = 0;
+                i = 0;
             }
-            document.write(i + "&nbsp");
-            count++;
         }
     </script>
 </body>
