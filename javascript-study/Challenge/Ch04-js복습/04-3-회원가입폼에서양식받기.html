@@ -67,20 +67,6 @@
     </div>
 
     <script>
-        document.querySelector('form').onsubmit = function() {
-            document.querySelectorAll('.inputbox').forEach((el, idx) => {
-                console.log(el.value);
-            })
-            
-            var slselector = document.getElementById('place');
-            console.log(slselector.options[slselector.selectedIndex].value);
-
-            var slradio = document.getElementsByName('gender');
-            for (var i = 0; i < slradio.length; i++){
-                if (slradio[i].checked)
-                    console.log(slradio[i].value)
-            }
-        };
 
         // document.querySelector('form').onsubmit = function () {
         //     var sc = document.querySelector('#email');
@@ -96,8 +82,21 @@
         // }
 
         document.querySelector('form').addEventListener("submit", (event) => {
-            // 동작(이벤트)을 실행하지 못하게 막는 메서드입니다.
+            // 동작(이벤트)을 실행하지 못하게 막는 메서드
             event.preventDefault();
+
+            document.querySelectorAll('.inputbox').forEach((el) => {
+                console.log(el.value);
+            })
+            
+            var slselector = document.getElementById('place');
+            console.log(slselector.value);
+
+            var slradio = document.getElementsByName('gender');
+            for (var i = 0; i < slradio.length; i++){
+                if (slradio[i].checked)
+                    console.log(slradio[i].value)
+            }
         });
     </script>
 </body>

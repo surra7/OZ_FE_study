@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge12-3</title>
+</head>
+
+<body>
+    <h2 id="now"></h2>
+    <h2 id="diff"></h2>
+
+    <script>
+
+        const h2Now = document.getElementById('now');
+        const h2Diff = document.getElementById('diff');
+        const endDay = new Date(2024, 11, 31, 23, 59, 59, 999);
+    
+        let timerId;
+        timerId = setInterval(function () {
+            const now = new Date();
+            h2Now.textContent = `현재 날짜와 시간: ${now}`;
+
+            let diffTime = endDay.getTime() - now.getTime();
+            let timeGap = 0;
+
+            let diffDay  = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            timeGap = diffTime % (1000 * 60 * 60 * 24);
+            let diffHour = Math.floor(timeGap / (1000 * 60 * 60));
+            timeGap = timeGap % (1000 * 60 * 60);
+            let diffMin = Math.floor(timeGap / (1000 * 60));
+            timeGap = timeGap % (1000 * 60);
+            let diffSec = Math.floor(timeGap / (1000));
+            
+            h2Diff.textContent = `올해의 남은 시간: ${diffDay}일 ${diffHour}시간 ${diffMin}분 ${diffSec}초 남았습니다.`;
+            
+        }, 1000);
+
+    </script>
+</body>
+
+</html>

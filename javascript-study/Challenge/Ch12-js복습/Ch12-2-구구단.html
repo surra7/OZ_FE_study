@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge12-2</title>
+</head>
+<body>
+    <h1>구구단 표</h1>
+    <h3>2단~9단을 만들어 보세요!</h3>
+    <table border="1">
+        <tr id="title">
+        </tr>
+        <tr id="content">
+        </tr>
+    </table>
+
+    <script>
+
+        const title = document.getElementById('title');
+        const content = document.getElementById('content');
+
+        for (let i = 2; i <= 9; i++){
+            const th = document.createElement('th');
+            th.innerText += `${i}단`;
+            title.append(th);
+            const td = document.createElement('td');
+            for (let j = 1; j <= 9; j++){
+                const p = document.createElement('p');
+                p.style.margin = 0;
+                p.innerText += `${i} x ${j} = ${i*j}`
+                td.append(p);
+            }
+            content.append(td);
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+</head>
+<body>
+    <script>
+        const vos = ["박지원", "최현준", "김경록"];
+        console.log(vos);
+
+        vos.push("강윤호")
+        console.log(vos);
+
+        vos.pop()
+        console.log(vos);
+
+        console.log(vos.indexOf("최현준"))
+        console.log(vos.indexOf("강윤호"))
+
+        // vos.splice(0, 2)
+        // console.log(vos);
+
+        // vos.splice(0, 3, "지원", "현준", "경록")
+        // console.log(vos)
+
+        vos.forEach(function(item){
+            console.log("함수 " + item)
+        })
+    </script>
+</body>
+</html>

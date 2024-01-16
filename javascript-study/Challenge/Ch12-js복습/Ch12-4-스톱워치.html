@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge12-4</title>
+</head>
+
+<body>
+    <h1>⏰스톱워치⏰</h1>
+    <div id="timer">0:0:0</div>
+    <div>
+        <button id="start" onclick="Start()">시작</button>
+        <button id="stop" onclick="Stop()">중지</button>
+        <button id="stop" onclick="Clear()">초기화</button>
+    </div>
+
+    <script>
+
+        const time = document.getElementById('timer');
+        let ms = 0, s = 0, m = 0;
+        let timer = 0;
+
+        function Stop() {
+            clearInterval(timer);
+        }
+
+        function Clear() {
+            ms = 0; s = 0; m = 0;
+            clearInterval(timer);
+            time.innerHTML = "0:0:0";
+        }
+
+        function Start() {
+            timer = setInterval(function () {
+                ms++;
+
+                if (ms >= 99) {
+                    ms = 0;
+                    s++;
+                }
+
+                if (s >= 60) {
+                    s = 0;
+                    m++;
+                }
+
+                time.innerHTML = m + ":" + s + ":" + ms;
+            }, 10);
+        }
+
+    </script>
+</body>
+
+</html>
