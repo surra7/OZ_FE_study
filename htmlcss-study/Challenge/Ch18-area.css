@@ -28,8 +28,7 @@
 .list-story{
     flex: 0 0 auto;
     margin: 20px 0;
-    animation: marquee 60s linear infinite;
-    overflow: hidden;
+    animation: marquee 30s linear infinite;
     height: 400px;
     position: absolute; white-space: nowrap;
 }

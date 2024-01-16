@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>빌트인 객체 math</title>
+</head>
+<body>
+    <button id="draw">추첨</button>
+    <p id="number"></p>
+
+    <script>
+        const button = document.getElementById('draw');
+        const p = document.getElementById('number');
+        const MAX_NUM = 10;
+        const MIN_NUM = 1;
+
+        button.addEventListener('click', function(){
+            let rn = Math.random()
+            p.textContent = Math.floor(rn * MAX_NUM) + MIN_NUM;
+        })
+    </script>
+</body>
+</html>

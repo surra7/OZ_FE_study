@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클래스 리스트</title>
+    <style>
+        .pretty{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="sky_002.jpg" alt="하늘사진">
+    <br>
+    <button id="add">ADD STYLE</button>
+    <button id="remove">REMOVE STYLE</button>
+    <button id="toggle">TOGGLE STYLE</button>
+    
+    <script>
+        const img = document.querySelector("img");
+        const addBtn = document.querySelector('#add');
+        const removeBtn = document.querySelector('#remove');
+        const toggleBtn = document.querySelector('#toggle');
+
+        console.log(img.classList);
+
+        addBtn.addEventListener('click', function(){
+            img.classList.add("pretty");
+            console.log(img.classList.contains("pretty"));
+        })
+        removeBtn.addEventListener('click', function(){
+            img.classList.remove("pretty");
+        })
+        toggleBtn.addEventListener('click', function(){
+            img.classList.toggle("pretty");
+        })
+    </script>
+</body>
+</html>
