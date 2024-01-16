@@ -28,9 +28,11 @@
 .list-story{
     flex: 0 0 auto;
     margin: 20px 0;
-    animation: marquee 30s linear infinite;
+    /* animation: marquee1 30s linear infinite; */
+    width: fit-content;
     height: 400px;
-    position: absolute; white-space: nowrap;
+    /* position: absolute;  */
+    white-space: nowrap;
 }
 .list-item{
     width: 316px;
@@ -40,9 +42,39 @@
     border-radius: 20px;
 }
 
-@keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+.original{
+    position: absolute;
+    animation: 33s linear 0s infinite normal forwards running marquee1;
+}
+
+.clone{
+    position: absolute;
+    left: 1956px;
+    animation: 33s linear 0s infinite normal none running marquee2;
+}
+
+@keyframes marquee1 {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-100%);
+    }
+    50.01%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes marquee2 {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-200%);
+    }
 }
 
 .area_service{
@@ -154,11 +186,6 @@
         max-width: 712px;
     }
     .list-story{
-        flex: 0 0 auto;
-        margin: 20px 0;
-        animation: marquee 60s linear infinite;
-        overflow: hidden;
-        white-space: nowrap; 
         height: 365px;
     }
     .list-item{
@@ -167,6 +194,9 @@
         background-color: #eee;
         margin-right: 10px;
         border-radius: 20px;
+    }
+    .clone{
+        left: 1452px;
     }
     
     .list-news{
