@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+
+    <script>
+        const meal = {
+            what: "제육볶음",
+            who: "아내",
+            when: "어제 저녁"
+        }
+
+        let sm = JSON.stringify(meal)
+        console.log(JSON.parse(sm));
+        console.log(typeof meal);
+        
+    </script>
+    
+</body>
+</html>
