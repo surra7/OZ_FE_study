@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge12-2</title>
+</head>
+
+<body>
+    <h1>이미지 멈춰!</h1>
+
+    <div id="container">
+        <div id="img-container"></div>
+        <button id="stop">멈춰</button>
+    </div>
+
+    <script>
+        const imgContainer = document.getElementById('img-container');
+        const button = document.getElementById('stop');
+        let imgArr = [];
+        imgArr[0] = "https://mblogthumb-phinf.pstatic.net/MjAyMDA5MTBfMjE4/MDAxNTk5NzMyNDg0NDU3.tuXEDqBbIWaQXmQBu2BvkfLLlM_q6A8vgIrVSBsJv20g.DQyFCBAJ3XPQJ_bQVrjpCQzFx-ihGWjhkPcLuIlhKd4g.JPEG.rkdxorn13/1599732483439.jpg?type=w800";
+        imgArr[1] = "https://mblogthumb-phinf.pstatic.net/MjAyMDA5MTBfMTYw/MDAxNTk5NzMyNDg1MjM5.f07FK9-ScNsYK2Nzd8j2zBtQvLtQOVk41Kp-XAa5M5wg.6PAUJrdFSOtVjw7QEjiemmXtk1rW0UZFe2gsPWHKqaog.JPEG.rkdxorn13/1599732484284.jpg?type=w800";
+        imgArr[2] = "https://mblogthumb-phinf.pstatic.net/MjAyMDA5MTBfMjY4/MDAxNTk5NzMyNjYwMDQw.6b8YYi0jIy6TjJuS6B_3nQd83e1GlIQEM0TNdg12B9Ag.ezKkufHjbGpu9f0eOEh1jVVEkgwU0D6uImx7TvYyluQg.JPEG.rkdxorn13/1599732659078.jpg?type=w800";
+
+        imgContainer.style.width = "100%";
+        imgContainer.style.height = "450px";
+        imgContainer.style.backgroundSize = "cover";
+
+        let timerId;
+        let time = 0;
+        timerId = setInterval(function () {
+            time++;
+            imgContainer.style.backgroundImage = `url(${imgArr[time % 3]})`;
+        }, 1000)
+        
+
+        button.addEventListener('click', function () {
+            clearInterval(timerId);
+            time = 0;
+        })
+    </script>
+</body>
+
+</html>

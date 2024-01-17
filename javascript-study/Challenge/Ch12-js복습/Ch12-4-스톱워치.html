@@ -19,35 +19,49 @@
     <script>
 
         const time = document.getElementById('timer');
+        let isRunning = false;
+        let startTime = 0;
         let ms = 0, s = 0, m = 0;
         let timer = 0;
 
         function Stop() {
             clearInterval(timer);
+            this.isRunning = false;
+
+            if (startTime !== 0){
+                this.isRunning = ture;
+                Start();
+            }
         }
 
         function Clear() {
             ms = 0; s = 0; m = 0;
             clearInterval(timer);
             time.innerHTML = "0:0:0";
+            this.isRunning = false;
+            this.startTime = 0;
         }
 
         function Start() {
-            timer = setInterval(function () {
-                ms++;
+            if (!this.isRunning) {
+                this.isRunning = true;
+                timer = setInterval(function () {
+                    ms++;
 
-                if (ms >= 99) {
-                    ms = 0;
-                    s++;
-                }
+                    if (ms >= 99) {
+                        ms = 0;
+                        s++;
+                    }
 
-                if (s >= 60) {
-                    s = 0;
-                    m++;
-                }
+                    if (s >= 60) {
+                        s = 0;
+                        m++;
+                    }
 
-                time.innerHTML = m + ":" + s + ":" + ms;
-            }, 10);
+                    time.innerHTML = m + ":" + s + ":" + ms;
+                }, 10);
+            }
+            startTime = m + s + ms;
         }
 
     </script>

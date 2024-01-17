@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge12-1</title>
+</head>
+
+<body>
+    <h1>가위바위보 게임</h1>
+
+    <p>가위, 바위, 보 중 하나를 선택하세요.</p>
+    <div id="rsp-img" style="display: flex; margin-bottom: 30px; text-align: center;">
+        <div id="user-div" style="margin-right: 30px;">
+            <p>당신의 선택: </p>
+            <img id="user-img" src="question-mark.png" style="width: 100px; height: 100px;">
+        </div>
+        <div id="computer-div">
+            <p>컴퓨터의 선택: </p>
+            <img id="computer-img" src="question-mark.png" style="width: 100px; height: 100px;">
+        </div>
+    </div>
+    <div id="answer">
+        <button id="scissors" onclick="clickSic()">가위</button>
+        <button id="rock" onclick="clickRock()">바위</button>
+        <button id="papper" onclick="clickPapper()">보</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        const userImg = document.getElementById('user-img');
+        const computerImg = document.getElementById('computer-img');
+        const resultP = document.getElementById('result');
+        const rsp = ["가위", "바위", "보"];
+        let rspImage = [];
+        rspImage[0] = "scissors.png";
+        rspImage[1] = "rock.png";
+        rspImage[2] = "papper.png";
+        let userAns;
+        let result = "";
+
+        function displayImg(userAns, computerAns) {
+            userImg.src = rspImage[userAns];
+            computerImg.src = rspImage[computerAns];
+        }
+
+        function clickSic() {
+            let computerAns = Math.floor(Math.random() * 3);
+            userAns = 0;
+
+            displayImg(userAns, computerAns);
+
+            if (computerAns === 1) {
+                result = "졌습니다!"
+            } else if (computerAns === 2) {
+                result = "이겼습니다!"
+            }
+            else {
+                result = "비겼습니다!"
+            }
+
+            resultP.textContent = `당신의 선택: ${rsp[userAns]} / 컴퓨터의 선택: ${rsp[computerAns]} / 결과: ${result}`;
+        }
+
+        function clickRock() {
+            let computerAns = Math.floor(Math.random() * 3);
+            userAns = 1;
+
+            displayImg(userAns, computerAns);
+
+            if (computerAns === 2) {
+                result = "졌습니다!"
+            } else if (computerAns === 0) {
+                result = "이겼습니다!"
+            }
+            else {
+                result = "비겼습니다!"
+            }
+
+            resultP.textContent = `당신의 선택: ${rsp[userAns]} / 컴퓨터의 선택: ${rsp[computerAns]} / 결과: ${result}`;
+        }
+
+        function clickPapper() {
+            let computerAns = Math.floor(Math.random() * 3);
+            userAns = 2;
+
+            displayImg(userAns, computerAns);
+
+            if (computerAns === 0) {
+                result = "졌습니다!"
+            } else if (computerAns === 1) {
+                result = "이겼습니다!"
+            }
+            else {
+                result = "비겼습니다!"
+            }
+
+            resultP.textContent = `당신의 선택: ${rsp[userAns]} / 컴퓨터의 선택: ${rsp[computerAns]} / 결과: ${result}`;
+        }
+
+    </script>
+</body>
+
+</html>
