@@ -11,16 +11,16 @@ html{
 body{
     height: 100%;
     margin: 0;
-    background-color: #ACE7F1;
+    background-color: blue;
 }
 
 .container{
+    padding: 20px;
     height: 100%;
     background-color: #ACE7F1;
 }
 
 .intro-box{
-    margin: 10px;
     min-height: 320px;
     background-color: white;
     border-radius: 20px;

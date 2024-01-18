@@ -68,19 +68,6 @@
 
     <script>
 
-        // document.querySelector('form').onsubmit = function () {
-        //     var sc = document.querySelector('#email');
-        //     console.log(sc.value);
-
-        //     sc = document.querySelector('#name');
-        //     console.log(sc.value);
-
-        //     sc = document.querySelector('#pw');
-        //     console.log(sc.value);
-
-        //     return false;
-        // }
-
         document.querySelector('form').addEventListener("submit", (event) => {
             // 동작(이벤트)을 실행하지 못하게 막는 메서드
             event.preventDefault();
@@ -88,12 +75,12 @@
             document.querySelectorAll('.inputbox').forEach((el) => {
                 console.log(el.value);
             })
-            
-            var slselector = document.getElementById('place');
+
+            let slselector = document.getElementById('place');
             console.log(slselector.value);
 
-            var slradio = document.getElementsByName('gender');
-            for (var i = 0; i < slradio.length; i++){
+            let slradio = document.getElementsByName('gender');
+            for (var i = 0; i < slradio.length; i++) {
                 if (slradio[i].checked)
                     console.log(slradio[i].value)
             }
