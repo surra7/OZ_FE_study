@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Challenge12-3</title>
 </head>
+
 <body>
     <div id="container">
         <div id="buttons">
@@ -12,6 +14,42 @@
             <button id="print">아이스크림 이름 출력</button>
             <button id="print-list">입력한 아이스크림 목록 출력</button>
         </div>
+        <h2 id="display">입력한 아이스크림 목록:</h2>
     </div>
+
+    <script>
+        const addBtn = document.getElementById('add');
+        const printBtn = document.getElementById('print');
+        const printListBtn = document.getElementById('print-list');
+        const display = document.getElementById('display');
+        let iceCreamArr = [];
+
+        addBtn.addEventListener('click', function () {
+            let addIce = prompt("추가하고 싶은 아이스크림의 이름을 입력하세요.");
+            iceCreamArr.push(addIce);
+        })
+
+        printBtn.addEventListener('click', function () {
+            iceCreamArr.forEach((item) => {
+                alert(item);
+            })
+        })
+
+        const p = document.createElement('p');
+
+        printListBtn.addEventListener('click', function () {
+            p.innerHTML = "";
+            for (let i = 0; i < iceCreamArr.length; i++){
+                if (i === iceCreamArr.length - 1){
+                    p.textContent += iceCreamArr[i];
+                    break;
+                }
+                p.textContent += `${iceCreamArr[i]}, `;
+            }
+            display.append(p);
+        })
+
+    </script>
 </body>
+
 </html>

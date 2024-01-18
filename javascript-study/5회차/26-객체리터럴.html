@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>객체 리터럴</title>
 </head>
+
 <body>
 
     <script>
         const cat = {
             species: "포유류",
-            title: "고양이"
+            title: "고양이",
+            eat: function () {
+                console.log("밥을 먹는다")
+            },
+            scratch: function () {
+                console.log("건드리면 할퀸다")
+            }
         }
 
         console.log(cat.species);
-        console.log(cat['title']);
+        console.log(cat['eat']);
         console.log(typeof cat);
+        console.log(Object.keys(cat))
 
         const gookhee = {
             ...cat,
@@ -25,7 +34,9 @@
         }
 
         console.log(...gookhee.favorite);
+        console.log(Object.keys(gookhee))
     </script>
-    
+
 </body>
+
 </html>
