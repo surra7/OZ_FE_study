@@ -25,19 +25,32 @@
 
         imgContainer.style.width = "100%";
         imgContainer.style.height = "450px";
-        imgContainer.style.backgroundSize = "cover";
+        imgContainer.style.backgroundSize = "700px 100%"
+        imgContainer.style.backgroundRepeat = "no-repeat";
 
         let timerId;
         let time = 0;
-        timerId = setInterval(function () {
-            time++;
-            imgContainer.style.backgroundImage = `url(${imgArr[time % 3]})`;
-        }, 1000)
-        
+        let isRunning = true;
+
+        Start();
+        function Start() {
+            timerId = setInterval(function () {
+                time++;
+                imgContainer.style.backgroundImage = `url(${imgArr[time % 3]})`;
+            }, 1000)
+        }
 
         button.addEventListener('click', function () {
-            clearInterval(timerId);
-            time = 0;
+            if (isRunning !== true) {
+                isRunning = true;
+                Start();
+                button.innerHTML = "멈춰"
+            } else {
+                clearInterval(timerId);
+                time = 0;
+                isRunning = !isRunning;
+                button.innerHTML = "다시시작"
+            }
         })
     </script>
 </body>

@@ -1,5 +1,7 @@
 *{
     box-sizing: border-box;
+    /* 스크롤의 움직임을 부드럽게, 기본값: auto */
+    scroll-behavior: smooth;
 }
 html, body{
     margin: 0;
@@ -38,4 +40,26 @@ main{
 img{
     width: 200px;
     height: 200px;
+}
+.more, .tothetop{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    cursor: pointer;
+}
+.more{
+    color: #FFF;
+    background-color: #cd8f6b;
+    left: 100px;
+    bottom: 100px;
+}
+.tothetop{
+    color: #FFF;
+    background-color: #ab4a12;
+    right: 100px;
+    bottom: 100px;
 }

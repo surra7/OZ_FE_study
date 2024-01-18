@@ -38,6 +38,3 @@ resetButton.addEventListener('click', function(){
     lottoNumbers.splice(0, 6);
     numbersDiv.innerHTML = "";
 })
-
-// 추첨 버튼을 누른 후 다시 버튼을 누르지 않은채 추첨을 눌러도 다시 번호가 추첨
-// 되도록
