@@ -8,6 +8,7 @@
 </head>
 
 <body>
+
     <h1>⏰스톱워치⏰</h1>
     <div id="timer">0:0:0</div>
     <div>
@@ -20,31 +21,24 @@
 
         const time = document.getElementById('timer');
         let isRunning = false;
-        let startTime = 0;
         let ms = 0, s = 0, m = 0;
         let timer = 0;
 
         function Stop() {
             clearInterval(timer);
-            this.isRunning = false;
-
-            if (startTime !== 0){
-                this.isRunning = ture;
-                Start();
-            }
+            isRunning = false;
         }
 
         function Clear() {
             ms = 0; s = 0; m = 0;
             clearInterval(timer);
             time.innerHTML = "0:0:0";
-            this.isRunning = false;
-            this.startTime = 0;
+            isRunning = false;
         }
 
         function Start() {
-            if (!this.isRunning) {
-                this.isRunning = true;
+            if (!isRunning) {
+                isRunning = true;
                 timer = setInterval(function () {
                     ms++;
 
@@ -61,7 +55,6 @@
                     time.innerHTML = m + ":" + s + ":" + ms;
                 }, 10);
             }
-            startTime = m + s + ms;
         }
 
     </script>
