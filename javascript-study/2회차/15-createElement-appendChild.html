@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>createElement & appendChild</title>
 </head>
+
 <body>
     <div id="container"></div>
+    <button id="button">지우기</button>
 
     <script>
-        for (let a = 1; a <= 5; a++){
+
+        for (let a = 1; a <= 5; a++) {
             const div = document.getElementById('container')
 
             const box = document.createElement('div')
@@ -22,4 +26,5 @@
         }
     </script>
 </body>
+
 </html>
