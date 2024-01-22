@@ -164,6 +164,10 @@ ul>.left>span {
     color: #666;
 }
 
+ul>.storage{
+    display: none;
+}
+
 /* 채팅 입력 창 */
 .chat-form {
     height: 80px;

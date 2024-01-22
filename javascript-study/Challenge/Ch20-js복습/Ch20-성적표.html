@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge20</title>
+</head>
+
+<body>
+    <h1>떡잎 유치원 멀리뛰기 결과</h1>
+    <table id="table" border="1" style="width: 300px; text-align: center;">
+        <tr>
+            <th>이름</th>
+            <th>점수</th>
+        </tr>
+        <tr>
+            <td>짱구</td>
+            <td>45</td>
+        </tr>
+        <tr>
+            <td>맹구</td>
+            <td>75</td>
+        </tr>
+        <tr>
+            <td>철수</td>
+            <td>95</td>
+        </tr>
+        <tr>
+            <td>훈이</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>유리</td>
+            <td>68</td>
+        </tr>
+        <tr>
+            <td>수지</td>
+            <td>86</td>
+        </tr>
+    </table>
+    <h2>75점이 넘는 사람:
+        <button id="print">출력</button>
+    </h2>
+    <h2 id="passName"></h2>
+
+    <script>
+        const table = document.getElementById('table');
+        const button = document.getElementById('print');
+        const passName = document.getElementById('passName');
+        let nameList = [];
+        let SortMapArr = [];
+
+        for (let i = 1; i < table.rows.length; i++) {
+            SortMapArr.push([table.rows[i].cells[0].textContent, table.rows[i].cells[1].textContent]);
+        }
+
+        // 점수 기준 내림차순
+        SortMapArr = SortMapArr.sort((a, b) => b[1] - a[1]);
+
+        function printName() {
+            // 버튼 한번만 눌리게
+            this.onclick = null;
+            for (let i = 0; i < SortMapArr.length; i++) {
+                if (parseInt(SortMapArr[i][1]) >= 75) {
+                    for (let j = 1; j < table.rows.length; j++) {
+                        if (table.rows[j].cells[0].textContent === SortMapArr[i][0]) {
+                            table.rows[j].style.backgroundColor = "yellowgreen";
+                        }
+                    }
+                    const Name = document.createElement('span');
+
+                    Name.textContent = `${SortMapArr[i][0]} `;
+
+                    passName.appendChild(Name);
+                }
+            }
+        }
+
+        button.onclick = printName;
+
+    </script>
+</body>
+
+</html>
