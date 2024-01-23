@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Challenge12-1</title>
     <style>
-        *{ box-sizing: border-box; }
-        body{
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
             width: 100%;
             height: 100%;
             background-color: white;
             text-align: center;
         }
-        #container{
+
+        #container {
             width: 340px;
             margin: auto;
-            padding: 10px;
+            padding: 12px;
             background-color: skyblue;
-            border: 1px solid black;
             border-radius: 5px;
+            box-shadow: 2px 2px 2px black;
         }
-        #result{
+
+        #result {
             width: 300px;
             margin: 5px;
             padding: 12px;
@@ -31,45 +37,64 @@
             font-weight: 700;
             text-align: right;
         }
-        #btn-container{
+
+        #btn-container {
+            height: 240px;
             display: grid;
             padding: 5px;
             margin-top: 10px;
             grid-template-columns: repeat(4, 1fr);
-            gap: 14px 4px;
+            grid-template-rows: repeat(5, 1fr);
+            gap: 14px 7px;
         }
-        button{
-            height: 36px;
+
+        #btn-container>#equal {
+            grid-row: span 3;
+        }
+
+        #btn-container>#num0 {
+            grid-column: span 2;
+        }
+
+        #btn-container>button {
             border: none;
             border-radius: 5px;
             font-size: 16px;
             font-weight: 500;
             cursor: pointer;
+            box-shadow: 2px 2px 2px black;
+        }
+
+        #btn-container>button:active {
+            box-shadow: none;
+            transform: translate(1px, 1px);
         }
     </style>
 </head>
+
 <body>
     <h1>Click MyCalculator</h1>
 
     <div id="container">
         <input id="result" type="text" readonly value="0">
         <div id="btn-container">
-            <button id="7" onclick="input(7)">7</button>
-            <button id="8" onclick="input(8)">8</button>
-            <button id="9" onclick="input(9)">9</button>
-            <button id="x" onclick="input('*')">x</button>
-            <button id="4" onclick="input(4)">4</button>
-            <button id="5" onclick="input(5)">5</button>
-            <button id="6" onclick="input(6)">6</button>
-            <button id="/" onclick="input('/')">/</button>
-            <button id="1" onclick="input(1)">1</button>
-            <button id="2" onclick="input(2)">2</button>
-            <button id="3" onclick="input(3)">3</button>
-            <button id="-" onclick="input('-')">-</button>
             <button id="C" onclick="reset()">C</button>
-            <button id="0" onclick="input(0)">0</button>
-            <button id="+" onclick="input('+')">+</button>
-            <button id="=" onclick="calculate()">=</button>
+            <button id="plus" onclick="input('+')">+</button>
+            <button id="minus" onclick="input('-')">-</button>
+            <button id="multiply" onclick="input('*')">x</button>
+            <button id="num7" onclick="input(7)">7</button>
+            <button id="num8" onclick="input(8)">8</button>
+            <button id="num9" onclick="input(9)">9</button>
+            <button id="divide" onclick="input('/')">/</button>
+            <button id="num4" onclick="input(4)">4</button>
+            <button id="num5" onclick="input(5)">5</button>
+            <button id="num6" onclick="input(6)">6</button>
+            <button id="equal" onclick="calculate()">=</button>
+            <button id="num1" onclick="input(1)">1</button>
+            <button id="num2" onclick="input(2)">2</button>
+            <button id="num3" onclick="input(3)">3</button>
+            <button id="num0" onclick="input(0)">0</button>
+            <button id="dot" onclick="inputdot('.')">.</button>
         </div>
     </div>
 
@@ -78,23 +103,37 @@
         let resultCal = document.getElementById('result');
         let CalculateResult = '';
 
-        function input(value){
-            if(resultCal.value == 0){
+        function input(value) {
+            if (resultCal.value == 0) {
                 resultCal.value = '';
             }
             resultCal.value += value;
         }
 
-        function calculate(){
+        // 소수점은 한번만 찍히게
+        function inputdot(value) {
+            let inputValue = '';
+            inputValue = resultCal.value;
+
+            if (!inputValue.includes('.')) {
+                resultCal.value += value;
+            }
+        }
+
+        function calculate() {
             CalculateResult = eval(resultCal.value);
+            // 세자리마다 콤마 찍기
+            CalculateResult = CalculateResult.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             resultCal.value = CalculateResult;
         }
 
-        function reset(){
+        function reset() {
             resultCal.value = 0;
             CalculateResult = '';
+
         }
-        
+
     </script>
 </body>
+
 </html>

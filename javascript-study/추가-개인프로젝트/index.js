@@ -109,7 +109,8 @@ function settingYourChat(chatText) {
         if (!AllChatArr.includes(yourChatArr[2])) {
             AllChatArr.push(yourChatArr[2]);
         }
-    } else if (chatText.includes("추천")) {
+    } else if (chatText.includes("추천" && "먹") || chatText.includes("저녁 추천") ||
+        chatText.includes("점심 추천") || chatText.includes("아침 추천")) {
         if (!AllChatArr.includes(yourChatArr[3])) {
             AllChatArr.push(yourChatArr[3]);
         }
