@@ -6,17 +6,21 @@
 ### 1. 기본 채팅방
 <img width="575" alt="기본채팅방" src="https://github.com/surra7/OZ_FE_study/assets/91553445/db919f1d-e637-4b1b-babe-29ad0dab498a">
 
+<br/>
 
 ### 2. 메세지 작성
 메세지를 작성할 수 있고 작성한 내용에 따라 상대방의 메세지가 3초 뒤 나타남
 - 가능한 메세지 목록: '수업', '추천', '고마워', '슈붕'
 <img width="577" alt="채팅내역" src="https://github.com/surra7/OZ_FE_study/assets/91553445/cf7e35b5-2c54-49f3-a4d5-46d63648899f">
 
+<br/>
 
 ### 3. 메세지 삭제
 작성한 메세지를 더블 클릭하면 삭제할 수 있음
+
 <img width="577" alt="메세지삭제" src="https://github.com/surra7/OZ_FE_study/assets/91553445/0b8782c4-ca97-4483-bdd9-3130ba4cacdb">
 
+<br/>
 
 ### 4. 로컬 스토리지
 채팅 내역이 로컬 스토리지에 저장되어 있어 새로고침해도 채팅 내역이 그대로 남아 있음
