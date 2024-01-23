@@ -69,7 +69,7 @@ function handleChatDbClick(clickedId) {
     confirmBtn.onclick = deleteMsg;
     cancelBtn.onclick = cancelDelete;
     // 삭제시 스크롤 위치 그대로 유지
-    history.scrollRestoration = "auto"
+    // history.scrollRestoration = "manual";
 }
 
 // 채팅 보여주기
@@ -139,11 +139,13 @@ function settingMyChat(aChat) {
 
 chatForm.addEventListener("submit", function (e) {
     e.preventDefault();
-
-    if (chatForm.chatText.value != "") {
-        const toBeAdded = new ChatContent(chatForm.chatText.value, new Date().getTime(), "me");
-        chatForm.chatText.value = "";
+    let str = chatForm.chatText.value;
+    // 입력 값이 공백과 엔터만 있을 경우 추가 x
+    if (str.replaceAll(/(\n|\r|\s)/g, "").length != 0) {
+        str = str.replace(/(\n|\r)/g, '<br/>');
+        const toBeAdded = new ChatContent(str, new Date().getTime(), "me");
         settingMyChat(toBeAdded);
         //setTimeout(displayAllChat, 3000);
     }
+    chatForm.chatText.value = "";
 })
