@@ -27,10 +27,10 @@
             </section>
             <section class="chat-screen-content" id="chat-scroll">
                 <ul class="chat-screen__texts" id="chat-screen">
-                    <li class="text left">안녕~~!
+                    <li class="text left storage">안녕~~!
                         <span>오전 10:20</span>
                     </li>
-                    <li class="text left">뭐해?
+                    <li class="text left storage">뭐해?
                         <span>오전 10:20</span>
                     </li>
                     <!-- <li class="text right">수업듣는 중..</li> -->
@@ -55,10 +55,15 @@
                 <input type="submit" value="전송" class="chat-form__btn">
             </section>
         </form>
+
+        <div id="delete-alert">
+            <p>메세지를 삭제하시겠습니까?</p>
+            <button id="confirm">확인</button>
+            <button id="cancel">취소</button>
+        </div>
     </div>
 
     <script src="index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </body>
 
 </html>
