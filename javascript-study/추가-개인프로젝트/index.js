@@ -6,10 +6,11 @@ const deleteAlert = document.getElementById('delete-alert');
 let yourChatArr = [];
 let AllChatArr = [];
 
-function ChatContent(chatText, chatId, chatWho) {
+function ChatContent(chatText, chatId, chatWho, chatTime) {
     this.chatText = chatText;
     this.chatId = chatId;
     this.chatWho = chatWho;
+    this.chatTime = chatTime;
 }
 
 // 디폴트 채팅내역 저장
@@ -89,9 +90,7 @@ function displayAllChat() {
         }
         AllChat.title = "더블클릭하여 삭제";
 
-        let options = { hour: "numeric", minute: "numeric" };
-        const now = new Date();
-        chatTime.textContent = now.toLocaleTimeString("ko-KR", options);
+        chatTime.textContent = aChat.chatTime;
 
         AllChat.addEventListener("dblclick", function () {
             handleChatDbClick(aChat.chatId);
@@ -104,22 +103,30 @@ function displayAllChat() {
 
 // 상대방의 메세지 설정
 function settingYourChat(chatText) {
+    let options = { hour: "numeric", minute: "numeric" };
+    const now = new Date();
+    const nowTime = now.toLocaleTimeString("ko-KR", options);
+    const regExp1 = /(?=.*추천)(?=.*먹).*/g;
+    const regExp2 = /[(?=.*저녁)(?=.*점심)(?=.*아침)](?=.*추천).*/g;
 
     if (chatText.includes("수업")) {
         if (!AllChatArr.includes(yourChatArr[2])) {
+            yourChatArr[2].chatTime = nowTime;
             AllChatArr.push(yourChatArr[2]);
         }
-    } else if (chatText.includes("추천" && "먹") || chatText.includes("저녁 추천") ||
-        chatText.includes("점심 추천") || chatText.includes("아침 추천")) {
+    } else if (chatText.match(regExp1) || chatText.match(regExp2)) {
         if (!AllChatArr.includes(yourChatArr[3])) {
+            yourChatArr[3].chatTime = nowTime;
             AllChatArr.push(yourChatArr[3]);
         }
     } else if (chatText.includes("고마워")) {
         if (!AllChatArr.includes(yourChatArr[4])) {
+            yourChatArr[4].chatTime = nowTime;
             AllChatArr.push(yourChatArr[4]);
         }
     } else if (chatText.includes("슈붕")) {
         if (!AllChatArr.includes(yourChatArr[5])) {
+            yourChatArr[5].chatTime = nowTime;
             AllChatArr.push(yourChatArr[5]);
         }
     }
@@ -127,6 +134,12 @@ function settingYourChat(chatText) {
 
 // 나의 메세지
 function settingMyChat(aChat) {
+    let options = { hour: "numeric", minute: "numeric" };
+    const now = new Date();
+    const nowTime = now.toLocaleTimeString("ko-KR", options);
+
+    aChat.chatTime = nowTime;
+
     AllChatArr.push(aChat);
     displayAllChat();
 
@@ -146,7 +159,6 @@ chatForm.addEventListener("submit", function (e) {
         str = str.replace(/(\n|\r)/g, '<br/>');
         const toBeAdded = new ChatContent(str, new Date().getTime(), "me");
         settingMyChat(toBeAdded);
-        //setTimeout(displayAllChat, 3000);
     }
     chatForm.chatText.value = "";
 })
