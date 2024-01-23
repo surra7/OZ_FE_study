@@ -39,13 +39,14 @@
 
         printListBtn.addEventListener('click', function () {
             p.innerHTML = "";
-            for (let i = 0; i < iceCreamArr.length; i++){
-                if (i === iceCreamArr.length - 1){
-                    p.textContent += iceCreamArr[i];
-                    break;
-                }
-                p.textContent += `${iceCreamArr[i]}, `;
-            }
+            // for (let i = 0; i < iceCreamArr.length; i++){
+            //     if (i === iceCreamArr.length - 1){
+            //         p.textContent += iceCreamArr[i];
+            //         break;
+            //     }
+            //     p.textContent += `${iceCreamArr[i]}, `;
+            // }
+            p.textContent = iceCreamArr.join(", ");
             display.append(p);
         })
 
