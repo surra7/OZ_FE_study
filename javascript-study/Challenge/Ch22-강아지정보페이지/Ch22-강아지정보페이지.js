@@ -24,17 +24,20 @@ function displayDogs(item) {
   main.appendChild(dogImgDiv);
 }
 
+// requst1 load함수
+function request1handleLoad() {
+  const response = JSON.parse(request1.response);
+  response.message.forEach(function (item) {
+    currentDogs.push(item);
+    displayDogs(item);
+  });
+}
+
 //웹 페이지가 처음 로딩되었을 때
 window.addEventListener("load", function () {
   // 강아지 사진 뿌리기
   request1.open("get", apiRandomDogs);
-  request1.addEventListener("load", function () {
-    const response = JSON.parse(request1.response);
-    response.message.forEach(function (item) {
-      currentDogs.push(item);
-      displayDogs(item);
-    });
-  });
+  request1.addEventListener("load", request1handleLoad);
   request1.send();
 
   // 셀렉트에 견종 정보 뿌리기
@@ -80,8 +83,14 @@ select.addEventListener("change", function () {
 
 // 리셋 버튼 눌렀을 때 새로운 강아지 사진 뿌리기
 resetBtn.addEventListener('click', function () {
-  window.location.reload();
-  // 단순히 리셋 버튼누르면 페이지 리로드 되게함
+  main.innerHTML = "";
+  select.value = "";
+  currentDogs = [];
+
+  request1.removeEventListener('load', request1handleLoad);
+  request1.open("get", apiRandomDogs);
+  request1.addEventListener("load", request1handleLoad);
+  request1.send();
 })
 
 // more 눌렀을 때 강아지 사진 더 가져오기
