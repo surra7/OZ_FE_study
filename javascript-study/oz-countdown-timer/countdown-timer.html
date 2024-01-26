@@ -30,17 +30,20 @@
 
     #title {
       margin: 0;
-      padding: 30px;
       font-size: 36px;
       font-weight: 800;
-      margin-top: 15px;
+      margin-top: 45px;
+    }
+
+    #title+p {
+      margin-top: 10px;
     }
 
     #container__timer {
       height: calc(100% - 80px);
       padding: 20px 60px;
       max-width: 820px;
-      margin: auto;
+      margin: 0 auto;
     }
 
     #countdown {
@@ -52,7 +55,7 @@
       color: white;
       margin: 8px;
       display: inline-block;
-      width: 100px;
+      width: 110px;
       height: 100px;
       text-align: center;
       border-radius: 16px;
@@ -63,13 +66,14 @@
       font-weight: 900;
       height: 80px;
       line-height: 108px;
+      letter-spacing: -.2px;
     }
 
     #countdown>div>span:nth-child(2) {
       display: block;
       font-size: 18px;
       font-weight: 400;
-      color: hsl(282, 100%, 21%);
+      color: hwb(255 0% 58%);
       position: relative;
       bottom: 20px;
     }
@@ -113,31 +117,131 @@
       font-size: 20px;
       font-weight: 500;
       border-radius: 5px;
-      display: none;
+      box-shadow: 2px 2px 2px #333;
+      cursor: pointer;
+      /* display: none; */
+    }
+
+    #custom-button:active {
+      background-color: hwb(255 0% 58%);
+      color: white;
+      transition: all 0.2s linear
     }
 
     #set__end-day {
       margin: 10px;
-      /* display: none; */
+      display: none;
+    }
+
+    #set__end-day span {
+      color: hwb(255 0% 58%);
     }
 
     #set__end-day select {
       width: 100px;
       height: 30px;
+      border: 1px solid hwb(255 0% 58%);
+      border-radius: 5px;
+    }
+
+    #setting-button {
+      width: 40px;
+      height: 30px;
+      border: 1px solid hwb(255 0% 58%);
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #setting-button:active {
+      background-color: hwb(255 0% 58%);
+      color: white;
+      transition: all 0.2s linear
     }
 
     .footer {
+      width: 100%;
       height: 80px;
       font-size: 12px;
       text-align: center;
-      background-color: hsla(260, 27%, 91%, 0.914);
+      background-color: hsla(225, 26%, 91%, 0.914);
       margin: auto;
       line-height: 80px;
+      position: relative;
     }
 
     .footer a {
-      color: hsl(282, 100%, 21%);
+      color: hwb(255 0% 58%);
       text-decoration: none;
+    }
+
+    @media screen and (max-width: 655px) {
+      #container__timer {
+        height: calc(100% - 70px);
+        padding: 10px 40px;
+        max-width: 820px;
+        margin: 0 auto;
+        min-width: 380px;
+      }
+
+      #title {
+        margin-top: 20px;
+        font-size: 32px;
+      }
+
+      #countdown {
+        margin-top: 20px;
+        width: 280px;
+        height: 280px;
+        margin: auto;
+      }
+
+      #countdown>div {
+        margin: 10px;
+        display: inline-block;
+        width: 100px;
+        height: 86px;
+      }
+
+      #countdown>div:nth-child(3) {
+        position: relative;
+        bottom: 10px;
+      }
+
+      #countdown>div:nth-child(4) {
+        position: relative;
+        bottom: 10px;
+      }
+
+      #countdown>div>span {
+        font-size: 42px;
+        line-height: 94px;
+      }
+
+      #countdown>div>span:nth-child(2) {
+        bottom: 30px;
+        width: 100px;
+        height: 40px;
+      }
+
+      #div__comment {
+        margin: 16px 0 0;
+      }
+
+      #comment {
+        font-size: 26px;
+        font-weight: 700;
+      }
+
+      #custom-button {
+        width: 300px;
+        height: 45px;
+        font-size: 16px;
+      }
+
+      .footer {
+        height: 70px;
+        line-height: 70px;
+      }
     }
   </style>
 </head>
@@ -146,6 +250,7 @@
   <div id="container">
     <div id="container__timer">
       <h2 id="title">오즈코딩 캠프 종료까지</h2>
+      <p id="oz-end">(2024.06.24)</p>
 
       <div id="countdown">
         <div>
@@ -172,21 +277,14 @@
       <div id="custom">
         <button id="custom-button">종료 날짜 설정</button>
         <div id="set__end-day">
-          <span>종료 날짜: </span>
-          <select id="month">
-            <option>1월</option>
-            <option>2월</option>
-            <option>3월</option>
-            <option>4월</option>
-            <option>5월</option>
+          <span>종료 날짜 </span>
+          <select id="select__month">
+            <option disabled selected value="defalt">월</option>
           </select>
-          <select id="day">
-            <option>1일</option>
-            <option>2일</option>
-            <option>3일</option>
-            <option>4일</option>
-            <option>5일</option>
+          <select id="select__day">
+            <option value="">일</option>
           </select>
+          <button id="setting-button">취소</button>
         </div>
       </div>
     </div>
@@ -197,19 +295,24 @@
     </div>
   </div>
   <script>
-    const h2Now = document.getElementById('now');
-    const h2Diff = document.getElementById('diff');
+    const title = document.getElementById('title');
+    const p = document.getElementById('oz-end');
     const countDown = document.getElementById('countdown');
     const day = document.getElementById('day');
     const hour = document.getElementById('hour');
     const min = document.getElementById('min');
     const sec = document.getElementById('sec');
-    const endDay = new Date(2024, 5, 25, 23, 59, 59, 999);
+    const customButton = document.getElementById('custom-button');
+    const setEndDay = document.getElementById('set__end-day');
+    const selectMonth = document.getElementById('select__month');
+    const selectDay = document.getElementById('select__day');
+    const setButton = document.getElementById('setting-button');
+
+    let endDay = new Date(2024, 5, 25, 23, 59, 59, 999);
 
     let timerId;
     timerId = setInterval(function () {
       const now = new Date();
-      // h2Now.textContent = `현재 날짜와 시간: ${now}`;
 
       let diffTime = endDay.getTime() - now.getTime();
       let timeGap = 0;
@@ -228,12 +331,67 @@
         sec.style.color = "white";
       }
 
-      day.textContent = `${diffDay}`;
-      hour.textContent = `${diffHour}`;
-      min.textContent = `${diffMin}`;
-      sec.textContent = `${diffSec}`;
+      day.textContent = `${diffDay.toString().padStart(2, '0')}`;
+      hour.textContent = `${diffHour.toString().padStart(2, '0')}`;
+      min.textContent = `${diffMin.toString().padStart(2, '0')}`;
+      sec.textContent = `${diffSec.toString().padStart(2, '0')}`;
 
     }, 1000);
+
+    customButton.addEventListener('click', function () {
+      customButton.style.display = "none";
+      setEndDay.style.display = "inline-block";
+    })
+
+    const nowMonth = new Date().getMonth() + 1;
+    const nowDate = new Date().getDate();
+
+    for (let i = nowMonth; i <= 12; i++) {
+      const newMonth = document.createElement('option');
+      newMonth.textContent = `${i}월`;
+      newMonth.value = i;
+      selectMonth.appendChild(newMonth);
+    }
+
+    selectMonth.addEventListener('change', function () {
+      selectDay.innerHTML = '';
+      const monthDate = new Date(2024, selectMonth.value, 0).getDate();
+
+      // 현재와 같은 달이면 오늘 이후 부터 선택가능
+      if (selectMonth.value == nowMonth) {
+        for (let i = nowDate + 1; i <= monthDate; i++) {
+          const newDate = document.createElement('option');
+          newDate.textContent = `${i}일`;
+          newDate.value = i;
+          selectDay.appendChild(newDate);
+        }
+      } else {
+        for (let i = 1; i <= monthDate; i++) {
+          const newDate = document.createElement('option');
+          newDate.textContent = `${i}일`;
+          newDate.value = i;
+          selectDay.appendChild(newDate);
+        }
+      }
+      setButton.textContent = "확인";
+    })
+
+    setButton.addEventListener('click', function () {
+      if (setButton.textContent !== "취소") {
+        endDay = new Date(2024, selectMonth.value - 1, selectDay.value - 1, 23, 59, 59, 999);
+        title.textContent = `${selectMonth.value}월 ${selectDay.value}일 까지 남은 시간`
+        title.style.paddingBottom = "31.5px";
+        p.style.display = "none";
+      }
+
+      setEndDay.style.display = "none";
+      customButton.style.display = "inline-block";
+      selectMonth.value = "defalt";
+      selectDay.innerHTML = "";
+      selectDay.value = "";
+      setButton.textContent = "취소";
+    })
+
   </script>
 </body>
 
