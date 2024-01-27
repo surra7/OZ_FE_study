@@ -11,9 +11,18 @@
       box-sizing: border-box;
     }
 
+    button {
+      cursor: pointer;
+    }
+
+    button:active {
+      background-color: hwb(255 0% 58%);
+      color: white;
+      transition: all 0.2s linear
+    }
+
     html {
       height: 100%;
-      font-size: 18px;
     }
 
     body {
@@ -25,7 +34,7 @@
     #container {
       height: 100%;
       text-align: center;
-      overflow: auto;
+      position: relative;
     }
 
     #title {
@@ -37,12 +46,13 @@
 
     #title+p {
       margin-top: 10px;
+      font-size: 16px;
+      font-style: italic;
     }
 
     #container__timer {
-      height: calc(100% - 80px);
+      min-height: calc(100% - 80px);
       padding: 20px 60px;
-      max-width: 820px;
       margin: 0 auto;
     }
 
@@ -104,47 +114,40 @@
       }
     }
 
-    #custom {
-      margin-top: 10px;
+    #setting {
+      margin-top: 12px;
     }
 
-    #custom-button {
+    #setting-button {
       width: 360px;
       height: 50px;
       margin: 10px;
-      border: 1.4px solid black;
-      background-color: #eee;
+      border: 1px solid hwb(255 0% 58%);
       font-size: 20px;
       font-weight: 500;
       border-radius: 5px;
-      box-shadow: 2px 2px 2px #333;
+      box-shadow: 2px 2px 2px hwb(255 0% 80%);
       cursor: pointer;
       /* display: none; */
     }
 
-    #custom-button:active {
-      background-color: hwb(255 0% 58%);
-      color: white;
-      transition: all 0.2s linear
-    }
-
-    #set__end-day {
+    #setting__end-day {
       margin: 10px;
       display: none;
     }
 
-    #set__end-day span {
+    #setting__end-day span {
       color: hwb(255 0% 58%);
     }
 
-    #set__end-day select {
+    #setting__end-day select {
       width: 100px;
       height: 30px;
       border: 1px solid hwb(255 0% 58%);
       border-radius: 5px;
     }
 
-    #setting-button {
+    #confirm-button {
       width: 40px;
       height: 30px;
       border: 1px solid hwb(255 0% 58%);
@@ -152,21 +155,15 @@
       cursor: pointer;
     }
 
-    #setting-button:active {
-      background-color: hwb(255 0% 58%);
-      color: white;
-      transition: all 0.2s linear
-    }
-
     .footer {
       width: 100%;
       height: 80px;
-      font-size: 12px;
+      font-size: 14px;
+      font-weight: 500;
       text-align: center;
       background-color: hsla(225, 26%, 91%, 0.914);
       margin: auto;
       line-height: 80px;
-      position: relative;
     }
 
     .footer a {
@@ -178,14 +175,13 @@
       #container__timer {
         height: calc(100% - 70px);
         padding: 10px 40px;
-        max-width: 820px;
         margin: 0 auto;
-        min-width: 380px;
       }
 
       #title {
         margin-top: 20px;
         font-size: 32px;
+        margin-bottom: 5px;
       }
 
       #countdown {
@@ -193,6 +189,8 @@
         width: 280px;
         height: 280px;
         margin: auto;
+        position: relative;
+        bottom: 0px;
       }
 
       #countdown>div {
@@ -204,16 +202,16 @@
 
       #countdown>div:nth-child(3) {
         position: relative;
-        bottom: 10px;
+        bottom: 16px;
       }
 
       #countdown>div:nth-child(4) {
         position: relative;
-        bottom: 10px;
+        bottom: 16px;
       }
 
       #countdown>div>span {
-        font-size: 42px;
+        font-size: 46px;
         line-height: 94px;
       }
 
@@ -232,7 +230,7 @@
         font-weight: 700;
       }
 
-      #custom-button {
+      #setting-button {
         width: 300px;
         height: 45px;
         font-size: 16px;
@@ -274,17 +272,17 @@
         <div id="comment">🔥남은 기간 화이팅!!🔥</div>
       </div>
 
-      <div id="custom">
-        <button id="custom-button">종료 날짜 설정</button>
-        <div id="set__end-day">
-          <span>종료 날짜 </span>
+      <div id="setting">
+        <button id="setting-button">종료 날짜 설정</button>
+        <div id="setting__end-day">
+          <span>종료 날짜&nbsp;</span>
           <select id="select__month">
-            <option disabled selected value="defalt">월</option>
+            <option disabled selected value="default">월</option>
           </select>
           <select id="select__day">
-            <option value="">일</option>
+            <option>일</option>
           </select>
-          <button id="setting-button">취소</button>
+          <button id="confirm-button">취소</button>
         </div>
       </div>
     </div>
@@ -302,11 +300,11 @@
     const hour = document.getElementById('hour');
     const min = document.getElementById('min');
     const sec = document.getElementById('sec');
-    const customButton = document.getElementById('custom-button');
-    const setEndDay = document.getElementById('set__end-day');
+    const settingButton = document.getElementById('setting-button');
+    const setEndDay = document.getElementById('setting__end-day');
     const selectMonth = document.getElementById('select__month');
     const selectDay = document.getElementById('select__day');
-    const setButton = document.getElementById('setting-button');
+    const confirmButton = document.getElementById('confirm-button');
 
     let endDay = new Date(2024, 5, 25, 23, 59, 59, 999);
 
@@ -326,9 +324,9 @@
       let diffSec = Math.floor(timeGap / (1000));
 
       if (diffSec <= 10) {
-        sec.style.color = "#FF3344";
+        sec.style.color = "#FF3333";
       } else {
-        sec.style.color = "white";
+        sec.style.color = "#white";
       }
 
       day.textContent = `${diffDay.toString().padStart(2, '0')}`;
@@ -338,8 +336,8 @@
 
     }, 1000);
 
-    customButton.addEventListener('click', function () {
-      customButton.style.display = "none";
+    settingButton.addEventListener('click', function () {
+      settingButton.style.display = "none";
       setEndDay.style.display = "inline-block";
     })
 
@@ -373,23 +371,22 @@
           selectDay.appendChild(newDate);
         }
       }
-      setButton.textContent = "확인";
+      confirmButton.textContent = "확인";
     })
 
-    setButton.addEventListener('click', function () {
-      if (setButton.textContent !== "취소") {
+    confirmButton.addEventListener('click', function () {
+      if (confirmButton.textContent !== "취소") {
         endDay = new Date(2024, selectMonth.value - 1, selectDay.value - 1, 23, 59, 59, 999);
         title.textContent = `${selectMonth.value}월 ${selectDay.value}일 까지 남은 시간`
-        title.style.paddingBottom = "31.5px";
-        p.style.display = "none";
+        title.style.paddingBottom = "30px";
+        p.textContent = "";
       }
 
       setEndDay.style.display = "none";
-      customButton.style.display = "inline-block";
-      selectMonth.value = "defalt";
+      settingButton.style.display = "inline-block";
+      selectMonth.value = "default";
       selectDay.innerHTML = "";
-      selectDay.value = "";
-      setButton.textContent = "취소";
+      confirmButton.textContent = "취소";
     })
 
   </script>
