@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Challenge08</title>
 </head>
+
 <body>
-    
+
     <div id="container"></div>
 
     <script>
@@ -20,12 +22,12 @@
         let attackDamage = parseInt(prompt("1회 공격시 데미지는? (양의 정수)"));
         let attackCount = 0;
 
-        if(attackDamage > 0){
-            while(monsterHP > 0){
+        if (attackDamage > 0) {
+            while (monsterHP > 0) {
                 monsterHP -= attackDamage;
                 attackCount += 1;
 
-                if (monsterHP < 0){
+                if (monsterHP < 0) {
                     monsterHP = 0;
                 }
 
@@ -43,10 +45,11 @@
             h2.style.color = "orange"
             h2.title = "게임을 다시 시작하고 싶으면 새로고침하세요"
             container.appendChild(h2)
-        } else{
+        } else {
             alert("데미지를 잘못 입력하여 게임을 취소합니다!")
         }
-        
+
     </script>
 </body>
+
 </html>
